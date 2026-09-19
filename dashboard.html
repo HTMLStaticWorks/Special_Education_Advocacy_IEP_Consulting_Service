@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student & Family Dashboard | Guided Path Advocacy</title>
+  <meta name="description"
+    content="Student & family portal with left-side menu for tracking application checklist progress by school, essay draft feedback, counselor meeting schedule, deadline reminders, and payment history.">
+
+  <!-- Bootstrap 5 CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+</head>
+
+<body class="bg-warm">
+
+  <!-- HEADER (Brand & Controls Only) -->
+  <header class="navbar navbar-custom sticky-top py-3 border-bottom border-subtle bg-surface">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="d-flex align-items-center gap-2">
+        <!-- Hamburger Menu Button to toggle Side Menu on Mobile & Tablet (< 1200px including 1024px) -->
+        <button class="btn p-1 border-0 shadow-none me-1 d-xl-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#dashboardSideMenuOffcanvas" aria-controls="dashboardSideMenuOffcanvas" aria-label="Toggle Dashboard Side Menu">
+          <i class="bi bi-list fs-1 text-primary"></i>
+        </button>
+
+        <a class="navbar-brand navbar-brand-logo" href="index.html">
+          <i class="bi bi-compass-fill"></i>
+          <span>Guided Path <small class="d-block fs-6 text-muted fw-normal">Advocacy & IEP Consulting</small></span>
+        </a>
+      </div>
+
+      <!-- Theme & RTL Controls: visible ONLY on desktop (>= 1200px), removed from header on mobile/tab (< 1200px) -->
+      <div class="d-none d-xl-flex align-items-center gap-2 ms-auto">
+        <button class="rtl-toggle-btn me-1" type="button" aria-label="Toggle RTL mode">RTL</button>
+        <button class="theme-toggle-btn" type="button" aria-label="Toggle theme">
+          <i class="bi bi-moon-stars-fill"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- DASHBOARD HERO HEADER -->
+  <header class="bg-surface border-bottom border-subtle py-4">
+    <div class="container">
+      <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between gap-3">
+        <div>
+          <span class="badge bg-accent-soft text-teal px-3 py-1 rounded-pill fw-bold mb-2">Student & Family
+            Portal</span>
+          <h1 class="h2 font-heading mb-1">Welcome Back, Sarah Jenkins</h1>
+          <p class="text-muted small mb-0">Managing IEP Planning & School Placement for <strong>Alex Jenkins • Grade
+              5</strong></p>
+        </div>
+        <div class="d-flex gap-2 flex-wrap">
+          <button onclick="alert('New Advocate Strategy Session booking triggered.')"
+            class="btn btn-sm btn-teal btn-custom"><i class="bi bi-plus-lg me-1"></i> Book Advocate Call</button>
+          <a href="contact.html" class="btn btn-sm btn-outline-teal btn-custom"><i class="bi bi-envelope me-1"></i>
+            Message Consultant</a>
+        </div>
+      </div>
+
+      <!-- Quick Summary Stats Grid -->
+      <div class="row g-3 mt-3">
+        <div class="col-6 col-md-3">
+          <div class="p-3 rounded-3 bg-warm border border-subtle">
+            <div class="small text-muted mb-1">Active School Checklists</div>
+            <div class="h4 font-heading text-teal mb-0">3 Schools</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 rounded-3 bg-warm border border-subtle">
+            <div class="small text-muted mb-1">Overall Plan Progress</div>
+            <div class="h4 font-heading text-sage mb-0">78% Complete</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 rounded-3 bg-warm border border-subtle">
+            <div class="small text-muted mb-1">Upcoming Meetings</div>
+            <div class="h4 font-heading text-coral mb-0">2 Scheduled</div>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <div class="p-3 rounded-3 bg-warm border border-subtle">
+            <div class="small text-muted mb-1">Pending Reminders</div>
+            <div class="h4 font-heading text-primary mb-0">4 Tasks</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN DASHBOARD CONTENT SECTION -->
+  <section class="py-4 py-md-5">
+    <div class="container">
+
+      <div class="row gy-4">
+
+        <!-- ========================================== -->
+        <!-- LEFT SIDEBAR MENU COLUMN (Top to Bottom)   -->
+        <!-- ========================================== -->
+        <div class="col-xl-3">
+          <!-- Mobile Side Menu Quick Action Button (< 1200px) -->
+          <button class="btn btn-teal w-100 d-xl-none mb-3 d-flex align-items-center justify-content-center gap-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#dashboardSideMenuOffcanvas">
+            <i class="bi bi-list fs-5"></i>
+            <span>Open Dashboard Side Menu</span>
+          </button>
+
+          <div class="offcanvas-xl offcanvas-start bg-surface border-end border-subtle p-3 p-xl-0" tabindex="-1" id="dashboardSideMenuOffcanvas" aria-labelledby="dashboardSideMenuOffcanvasLabel">
+            <div class="offcanvas-header border-bottom border-subtle mb-3 d-xl-none">
+              <h5 class="offcanvas-title font-heading text-primary mb-0" id="dashboardSideMenuOffcanvasLabel">
+                <i class="bi bi-compass-fill text-teal me-2"></i> Dashboard Menu
+              </h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#dashboardSideMenuOffcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body p-0">
+              <aside class="dashboard-sidebar w-100">
+
+                <!-- User Profile Summary Card -->
+                <div class="dashboard-user-card">
+                  <div class="dashboard-user-avatar">SJ</div>
+                  <div>
+                    <h2 class="h6 font-heading mb-0 text-primary">Sarah Jenkins</h2>
+                    <p class="small text-muted mb-0">Alex • 5th Grade IEP</p>
+                    <span class="badge bg-sage-soft text-sage small px-2 py-0 mt-1">Active Plan</span>
+                  </div>
+                </div>
+
+                <!-- Left Side Menu Navigation Items -->
+                <ul class="nav flex-column dashboard-side-nav nav-pills" id="dashboardTabNav" role="tablist">
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link active w-100" id="tab-overview-btn" data-bs-toggle="pill"
+                      data-bs-target="#tab-overview" type="button" role="tab" aria-controls="tab-overview"
+                      aria-selected="true" onclick="closeDashboardSideMenuMobile()">
+                      <i class="bi bi-grid-1x2-fill"></i> Dashboard Overview
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link w-100" id="tab-checklists-btn" data-bs-toggle="pill"
+                      data-bs-target="#tab-checklists" type="button" role="tab" aria-controls="tab-checklists"
+                      aria-selected="false" onclick="closeDashboardSideMenuMobile()">
+                      <i class="bi bi-journal-check"></i> School Checklists <span
+                        class="badge bg-sage-soft text-sage ms-auto">3</span>
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link w-100" id="tab-feedback-btn" data-bs-toggle="pill"
+                      data-bs-target="#tab-feedback" type="button" role="tab" aria-controls="tab-feedback"
+                      aria-selected="false" onclick="closeDashboardSideMenuMobile()">
+                      <i class="bi bi-chat-left-text-fill"></i> Draft Feedback <span
+                        class="badge bg-coral-soft text-coral ms-auto">New</span>
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link w-100" id="tab-meetings-btn" data-bs-toggle="pill"
+                      data-bs-target="#tab-meetings" type="button" role="tab" aria-controls="tab-meetings"
+                      aria-selected="false" onclick="closeDashboardSideMenuMobile()">
+                      <i class="bi bi-calendar-event-fill"></i> Meeting Schedule <span
+                        class="badge bg-accent-soft text-teal ms-auto">2</span>
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link w-100" id="tab-reminders-btn" data-bs-toggle="pill"
+                      data-bs-target="#tab-reminders" type="button" role="tab" aria-controls="tab-reminders"
+                      aria-selected="false" onclick="closeDashboardSideMenuMobile()">
+                      <i class="bi bi-bell-fill"></i> Deadline Reminders <span
+                        class="badge bg-danger text-white ms-auto">4</span>
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link w-100" id="tab-payments-btn" data-bs-toggle="pill"
+                      data-bs-target="#tab-payments" type="button" role="tab" aria-controls="tab-payments"
+                      aria-selected="false" onclick="closeDashboardSideMenuMobile()">
+                      <i class="bi bi-receipt-cutoff"></i> Payment History
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button class="nav-link w-100" id="tab-documents-btn" data-bs-toggle="pill"
+                      data-bs-target="#tab-documents" type="button" role="tab" aria-controls="tab-documents"
+                      aria-selected="false" onclick="closeDashboardSideMenuMobile()">
+                      <i class="bi bi-folder-fill"></i> Document Repository
+                    </button>
+                  </li>
+
+                  <!-- Theme & RTL Controls inside menu for mobile & tablet (< 1200px) -->
+                  <li class="nav-item d-xl-none pt-3 mt-3 border-top border-subtle">
+                    <div class="small fw-bold text-muted uppercase tracking-wider mb-2">Display Mode:</div>
+                    <div class="d-flex align-items-center gap-2">
+                      <button class="rtl-toggle-btn btn btn-sm btn-outline-teal flex-fill" type="button" aria-label="Toggle RTL mode">RTL</button>
+                      <button class="theme-toggle-btn btn btn-sm btn-outline-teal flex-fill" type="button" aria-label="Toggle theme">
+                        <i class="bi bi-moon-stars-fill me-1"></i> Theme
+                      </button>
+                    </div>
+                  </li>
+
+                  <li class="nav-item pt-2 border-top border-subtle mt-2">
+                    <a href="login.html" onclick="alert('You have logged out successfully.');" class="nav-link nav-link-logout w-100">
+                      <i class="bi bi-box-arrow-right me-1"></i> Log Out
+                    </a>
+                  </li>
+                </ul>
+
+              </aside>
+            </div>
+          </div>
+        </div>
+
+        <!-- ========================================== -->
+        <!-- RIGHT CONTENT COLUMN (Divided Menu Pages)  -->
+        <!-- ========================================== -->
+        <div class="col-xl-9">
+          <div class="tab-content" id="dashboardTabContent">
+
+            <!-- PAGE 1: OVERVIEW -->
+            <div class="tab-pane fade show active" id="tab-overview" role="tabpanel" aria-labelledby="tab-overview-btn">
+
+              <!-- Welcome Alert Banner -->
+              <div class="p-4 rounded-4 bg-surface border border-subtle shadow-sm mb-4">
+                <div class="d-flex align-items-center justify-content-between mb-3 pb-2 border-bottom border-subtle">
+                  <div>
+                    <h2 class="h4 font-heading mb-1"><i class="bi bi-speedometer2 text-teal me-2"></i> Student Portal
+                      Dashboard Overview</h2>
+                    <p class="small text-muted mb-0">Summary of active school application checklists, upcoming meetings,
+                      and recent advocate reviews.</p>
+                  </div>
+                  <span class="badge bg-sage-soft text-sage px-3 py-1 rounded-pill">Status: On Track</span>
+                </div>
+
+                <div class="row g-3">
+                  <!-- Quick Card 1 -->
+                  <div class="col-md-6">
+                    <div class="p-3 rounded-3 bg-warm border border-subtle">
+                      <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h3 class="h6 font-heading mb-0 text-primary"><i class="bi bi-journal-check me-2 text-teal"></i>
+                          Top Target School</h3>
+                        <span class="badge bg-sage-soft text-sage">85% Complete</span>
+                      </div>
+                      <p class="fw-bold mb-1">Lincoln Elementary School (ARD Meeting)</p>
+                      <p class="small text-muted mb-2">Next Milestone: Final ARD Signoff on Oct 12, 2026.</p>
+                      <button onclick="document.getElementById('tab-checklists-btn').click()"
+                        class="btn btn-xs btn-outline-teal btn-custom">View All 3 Checklists <i
+                          class="bi bi-arrow-right ms-1"></i></button>
+                    </div>
+                  </div>
+
+                  <!-- Quick Card 2 -->
+                  <div class="col-md-6">
+                    <div class="p-3 rounded-3 bg-warm border border-subtle">
+                      <div class="d-flex justify-content-between align-items-center mb-2">
+                        <h3 class="h6 font-heading mb-0 text-primary"><i
+                            class="bi bi-chat-left-text me-2 text-coral"></i> Latest Draft Feedback</h3>
+                        <span class="badge bg-coral-soft text-coral">Reviewed Yesterday</span>
+                      </div>
+                      <p class="fw-bold mb-1">Parent Concerns Input Statement v2</p>
+                      <p class="small text-muted mb-2">"Added quantitative sensory baseline metrics for Section 2."</p>
+                      <button onclick="document.getElementById('tab-feedback-btn').click()"
+                        class="btn btn-xs btn-coral btn-custom">Read Feedback <i
+                          class="bi bi-arrow-right ms-1"></i></button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Next Scheduled Session Widget -->
+              <div class="p-4 rounded-4 bg-surface border border-subtle shadow-sm mb-4">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                  <h2 class="h5 font-heading mb-0"><i class="bi bi-calendar-check text-teal me-2"></i> Next Advocate
+                    Session</h2>
+                  <button onclick="document.getElementById('tab-meetings-btn').click()"
+                    class="btn btn-xs btn-outline-teal btn-custom">View Full Calendar</button>
+                </div>
+
+                <div
+                  class="p-3 rounded-3 bg-warm border border-subtle d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+                  <div>
+                    <span class="badge bg-accent-soft text-teal mb-1 fw-bold">UPCOMING VIRTUAL CALL</span>
+                    <h3 class="h6 font-heading mb-1">Pre-ARD Meeting Strategy Session</h3>
+                    <p class="small text-muted mb-0"><i class="bi bi-clock me-1"></i> Thursday, Oct 08 • 10:00 AM EST •
+                      With Eleanor Vance, M.Ed.</p>
+                  </div>
+                  <div class="d-flex gap-2">
+                    <button onclick="alert('Launching secure video room...')" class="btn btn-sm btn-teal btn-custom"><i
+                        class="bi bi-camera-video me-1"></i> Join Call</button>
+                    <button onclick="alert('Agenda PDF sent to email')"
+                      class="btn btn-sm btn-outline-teal btn-custom">Agenda</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Priority Action Reminders Preview -->
+              <div class="p-4 rounded-4 bg-surface border border-subtle shadow-sm">
+                <div class="d-flex align-items-center justify-content-between mb-3">
+                  <h2 class="h5 font-heading mb-0"><i class="bi bi-bell text-coral me-2"></i> Immediate Action Items
+                  </h2>
+                  <button onclick="document.getElementById('tab-reminders-btn').click()"
+                    class="btn btn-xs btn-outline-teal btn-custom">Manage Reminders</button>
+                </div>
+                <div class="d-flex flex-column gap-2">
+                  <div
+                    class="p-3 rounded-3 bg-warm border border-subtle d-flex align-items-center justify-content-between">
+                    <div>
+                      <span class="badge bg-danger text-white small me-2">High Priority</span>
+                      <strong class="text-primary small">Request Draft Goals from Lincoln Elementary</strong>
+                      <span class="small text-muted ms-2">(Due Oct 02)</span>
+                    </div>
+                    <button onclick="alert('Task marked done')"
+                      class="btn btn-xs btn-outline-teal btn-custom">Complete</button>
+                  </div>
+                  <div
+                    class="p-3 rounded-3 bg-warm border border-subtle d-flex align-items-center justify-content-between">
+                    <div>
+                      <span class="badge bg-warning text-dark small me-2">Medium Priority</span>
+                      <strong class="text-primary small">Sign & Submit Parent Input Statement</strong>
+                      <span class="small text-muted ms-2">(Due Oct 05)</span>
+                    </div>
+                    <button onclick="alert('Task marked done')"
+                      class="btn btn-xs btn-outline-teal btn-custom">Complete</button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- PAGE 2: SCHOOL CHECKLISTS -->
+            <div class="tab-pane fade" id="tab-checklists" role="tabpanel" aria-labelledby="tab-checklists-btn">
+              <div class="p-4 rounded-4 bg-surface border border-subtle shadow-sm">
+                <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-subtle">
+                  <div>
+                    <h2 class="h4 font-heading mb-1"><i class="bi bi-journal-check text-teal me-2"></i> Application &
+                      IEP Checklist Progress by School</h2>
+                    <p class="small text-muted mb-0">Track document milestones, evaluation reviews, and placement steps
+                      for each target school.</p>
+                  </div>
+                  <button
+                    onclick="let s=prompt('Enter new target school name:'); if(s) alert('Target school added: ' + s);"
+                    class="btn btn-sm btn-teal btn-custom"><i class="bi bi-plus-lg me-1"></i> Add School Target</button>
+                </div>
+
+                <!-- School 1 Card -->
+                <div class="p-3 rounded-3 bg-warm border border-subtle mb-4">
+                  <div
+                    class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center mb-2 gap-2">
+                    <h3 class="h6 font-heading mb-0 text-primary"><i class="bi bi-building me-2"></i> Lincoln Elementary
+                      School (Public District)</h3>
+                    <span class="badge bg-sage-soft text-sage px-3 py-1 rounded-pill">85% Completed</span>
+                  </div>
+                  <p class="small text-muted mb-2">Target ARD Meeting Date: October 12, 2026 • Lead Advocate: Eleanor
+                    Vance, M.Ed.</p>
+                  <div class="progress mb-3" style="height: 10px;">
+                    <div class="progress-bar bg-sage" role="progressbar" style="width: 85%" aria-valuenow="85"
+                      aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <div class="row g-2 small text-muted">
+                    <div class="col-6 col-sm-3"><i class="bi bi-check-circle-fill text-sage me-1"></i> FIIE Report
+                      Audited</div>
+                    <div class="col-6 col-sm-3"><i class="bi bi-check-circle-fill text-sage me-1"></i> Parent Statement
+                      Sent</div>
+                    <div class="col-6 col-sm-3"><i class="bi bi-check-circle-fill text-sage me-1"></i> Draft Goals
+                      Reviewed</div>
+                    <div class="col-6 col-sm-3"><i class="bi bi-clock-history text-coral me-1"></i> Final ARD Signoff
+                    </div>
+                  </div>
+                </div>
+
+                <!-- School 2 Card -->
+                <div class="p-3 rounded-3 bg-warm border border-subtle mb-4">
+                  <div
+                    class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center mb-2 gap-2">
+                    <h3 class="h6 font-heading mb-0 text-primary"><i class="bi bi-building me-2"></i> Oakridge Middle
+                      Academy (Specialized Placement)</h3>
+                    <span class="badge bg-coral-soft text-coral px-3 py-1 rounded-pill">60% In Review</span>
+                  </div>
+                  <p class="small text-muted mb-2">Target Application Date: November 05, 2026 • Lead Advocate: Marcus
+                    Rivera, M.A.</p>
+                  <div class="progress mb-3" style="height: 10px;">
+                    <div class="progress-bar bg-coral" role="progressbar" style="width: 60%" aria-valuenow="60"
+                      aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <div class="row g-2 small text-muted">
+                    <div class="col-6 col-sm-3"><i class="bi bi-check-circle-fill text-sage me-1"></i> Application Filed
+                    </div>
+                    <div class="col-6 col-sm-3"><i class="bi bi-check-circle-fill text-sage me-1"></i> OT/ST Records
+                      Shared</div>
+                    <div class="col-6 col-sm-3"><i class="bi bi-hourglass-split text-coral me-1"></i> Essay Draft
+                      Feedback</div>
+                    <div class="col-6 col-sm-3"><i class="bi bi-circle text-muted me-1"></i> Placement Interview</div>
+                  </div>
+                </div>
+
+                <!-- School 3 Card -->
+                <div class="p-3 rounded-3 bg-warm border border-subtle">
+                  <div
+                    class="d-flex flex-column flex-sm-row justify-content-sm-between align-items-sm-center mb-2 gap-2">
+                    <h3 class="h6 font-heading mb-0 text-primary"><i class="bi bi-building me-2"></i> St. Jude Learning
+                      Center (Private Support)</h3>
+                    <span class="badge bg-accent-soft text-teal px-3 py-1 rounded-pill">40% Planning</span>
+                  </div>
+                  <p class="small text-muted mb-2">Target Evaluation Date: December 01, 2026 • Lead Advocate: Sarah
+                    Kapoor</p>
+                  <div class="progress mb-3" style="height: 10px;">
+                    <div class="progress-bar bg-teal" role="progressbar" style="width: 40%" aria-valuenow="40"
+                      aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <div class="row g-2 small text-muted">
+                    <div class="col-6 col-sm-3"><i class="bi bi-check-circle-fill text-sage me-1"></i> Intake Form
+                      Submitted</div>
+                    <div class="col-6 col-sm-3"><i class="bi bi-clock-history text-coral me-1"></i> Accommodations Prep
+                    </div>
+                    <div class="col-6 col-sm-3"><i class="bi bi-circle text-muted me-1"></i> Tuition Support Form</div>
+                    <div class="col-6 col-sm-3"><i class="bi bi-circle text-muted me-1"></i> Final Admission</div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- PAGE 3: ESSAY & DRAFT FEEDBACK -->
+            <div class="tab-pane fade" id="tab-feedback" role="tabpanel" aria-labelledby="tab-feedback-btn">
+              <div class="p-4 rounded-4 bg-surface border border-subtle shadow-sm">
+                <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-subtle">
+                  <div>
+                    <h2 class="h4 font-heading mb-1"><i class="bi bi-chat-left-text-fill text-coral me-2"></i> Essay &
+                      Document Draft Feedback</h2>
+                    <p class="small text-muted mb-0">Consultant feedback notes and annotated edits on your parent
+                      statements, student essays, and IEP drafts.</p>
+                  </div>
+                  <button onclick="alert('Demo Upload: Drag & drop your statement or essay file')"
+                    class="btn btn-sm btn-coral btn-custom"><i class="bi bi-upload me-1"></i> Upload New Draft</button>
+                </div>
+
+                <div class="row g-3">
+                  <!-- Draft Item 1 -->
+                  <div class="col-md-6">
+                    <div class="p-3 rounded-3 bg-warm border border-subtle h-100">
+                      <div class="d-flex align-items-center justify-content-between mb-2">
+                        <span class="badge bg-coral-soft text-coral small fw-bold">Parent Input Statement</span>
+                        <span class="small text-muted">Reviewed Yesterday</span>
+                      </div>
+                      <h3 class="h6 font-heading mb-2">Parent Concerns Input Statement v2</h3>
+                      <p class="small text-muted mb-3">"Feedback: Excellent detail on sensory needs. Added quantitative
+                        baseline metrics to Section 2 for speech & OT goals."</p>
+                      <div class="d-flex align-items-center justify-content-between pt-2 border-top border-subtle">
+                        <span class="small text-teal fw-semibold"><i class="bi bi-person me-1"></i> Eleanor Vance</span>
+                        <button onclick="alert('Downloading Reviewed Statement Draft v2.docx')"
+                          class="btn btn-xs btn-coral btn-custom py-1 px-2 text-nowrap"><i
+                            class="bi bi-download me-1"></i> Download</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Draft Item 2 -->
+                  <div class="col-md-6">
+                    <div class="p-3 rounded-3 bg-warm border border-subtle h-100">
+                      <div class="d-flex align-items-center justify-content-between mb-2">
+                        <span class="badge bg-sage-soft text-sage small fw-bold">Accommodations Draft</span>
+                        <span class="small text-muted">Reviewed Sept 15</span>
+                      </div>
+                      <h3 class="h6 font-heading mb-2">Classroom Sensory & Testing Accommodations</h3>
+                      <p class="small text-muted mb-3">"Feedback: Refined wording for extended testing time to strictly
+                        comply with state assessment guidelines."</p>
+                      <div class="d-flex align-items-center justify-content-between pt-2 border-top border-subtle">
+                        <span class="small text-sage fw-semibold"><i class="bi bi-person me-1"></i> Marcus Rivera</span>
+                        <button onclick="alert('Downloading Accommodations Draft.pdf')"
+                          class="btn btn-xs btn-outline-teal btn-custom py-1 px-2 text-nowrap"><i
+                            class="bi bi-download me-1"></i> Download</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Draft Item 3 -->
+                  <div class="col-md-6">
+                    <div class="p-3 rounded-3 bg-warm border border-subtle h-100">
+                      <div class="d-flex align-items-center justify-content-between mb-2">
+                        <span class="badge bg-accent-soft text-teal small fw-bold">Student Personal Essay</span>
+                        <span class="small text-muted">Pending Review</span>
+                      </div>
+                      <h3 class="h6 font-heading mb-2">Student Self-Advocacy & Learning Style Statement</h3>
+                      <p class="small text-muted mb-3">"Submitted for Oakridge Middle placement package. Consultant
+                        review scheduled for Oct 03."</p>
+                      <div class="d-flex align-items-center justify-content-between pt-2 border-top border-subtle">
+                        <span class="small text-muted fw-semibold"><i class="bi bi-hourglass-split me-1"></i> In
+                          Queue</span>
+                        <button onclick="alert('Draft original preview opened')"
+                          class="btn btn-xs btn-outline-teal btn-custom py-1 px-2 text-nowrap"><i
+                            class="bi bi-eye me-1"></i> Preview</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Upload Box Card -->
+                  <div class="col-md-6">
+                    <div
+                      class="p-3 rounded-3 bg-warm border border-dashed border-teal text-center d-flex flex-column justify-content-center align-items-center h-100">
+                      <i class="bi bi-cloud-arrow-up fs-2 text-teal mb-2"></i>
+                      <h3 class="h6 font-heading mb-1">Submit Draft for Advocate Review</h3>
+                      <p class="small text-muted mb-3">Upload DOCX, PDF, or TXT files up to 25MB.</p>
+                      <button onclick="alert('File browser window opened')"
+                        class="btn btn-xs btn-teal btn-custom">Select File to Upload</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- PAGE 4: MEETING SCHEDULE -->
+            <div class="tab-pane fade" id="tab-meetings" role="tabpanel" aria-labelledby="tab-meetings-btn">
+              <div class="p-4 rounded-4 bg-surface border border-subtle shadow-sm">
+                <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-subtle">
+                  <div>
+                    <h2 class="h4 font-heading mb-1"><i class="bi bi-calendar-event-fill text-teal me-2"></i> Counselor
+                      & Advocate Meeting Schedule</h2>
+                    <p class="small text-muted mb-0">Your upcoming 1-on-1 strategy sessions, pre-ARD preparation calls,
+                      and evaluation walkthroughs.</p>
+                  </div>
+                  <button onclick="alert('Booking calendar modal launched')" class="btn btn-sm btn-teal btn-custom"><i
+                      class="bi bi-plus-lg me-1"></i> Book New Call</button>
+                </div>
+
+                <div class="timeline-roadmap ps-3 border-start">
+                  <!-- Session 1 -->
+                  <div class="mb-4 position-relative">
+                    <div class="p-3 rounded-3 bg-warm border border-subtle">
+                      <span class="badge bg-accent-soft text-teal mb-2 fw-bold">UPCOMING VIRTUAL CALL</span>
+                      <h3 class="h6 font-heading mb-1 text-primary">Pre-ARD Meeting Strategy Session</h3>
+                      <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> Thursday, October 08, 2026 •
+                        10:00 AM - 11:00 AM EST</p>
+                      <p class="small text-secondary mb-3"><i class="bi bi-person me-1"></i> Lead Consultant:
+                        <strong>Eleanor Vance, M.Ed.</strong></p>
+                      <div class="d-flex gap-2 flex-wrap">
+                        <button onclick="alert('Joining Virtual Video Room #1082')"
+                          class="btn btn-xs btn-teal btn-custom py-1 px-3"><i class="bi bi-camera-video me-1"></i> Join
+                          Call</button>
+                        <button onclick="alert('Reschedule request submitted to consultant')"
+                          class="btn btn-xs btn-outline-teal btn-custom py-1 px-2">Reschedule</button>
+                        <button onclick="alert('Agenda PDF downloaded')"
+                          class="btn btn-xs btn-outline-teal btn-custom py-1 px-2"><i
+                            class="bi bi-file-earmark-text me-1"></i> Agenda</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Session 2 -->
+                  <div class="mb-4 position-relative">
+                    <div class="p-3 rounded-3 bg-warm border border-subtle">
+                      <span class="badge bg-sage-soft text-sage mb-2 fw-bold">CONFIRMED SESSION</span>
+                      <h3 class="h6 font-heading mb-1 text-primary">Post-Evaluation Score Walkthrough</h3>
+                      <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> Tuesday, October 20, 2026 • 2:30
+                        PM - 3:30 PM EST</p>
+                      <p class="small text-secondary mb-3"><i class="bi bi-person me-1"></i> Lead Consultant:
+                        <strong>Marcus Rivera, M.A.</strong></p>
+                      <div class="d-flex gap-2 flex-wrap">
+                        <button onclick="alert('Meeting invitation resent to email')"
+                          class="btn btn-xs btn-outline-teal btn-custom py-1 px-2"><i
+                            class="bi bi-calendar-plus me-1"></i> Add to Calendar</button>
+                        <button onclick="alert('Reschedule request submitted')"
+                          class="btn btn-xs btn-outline-teal btn-custom py-1 px-2">Reschedule</button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Session 3 -->
+                  <div class="position-relative">
+                    <div class="p-3 rounded-3 bg-warm border border-subtle opacity-75">
+                      <span class="badge bg-secondary text-white mb-2 fw-bold">TENTATIVE</span>
+                      <h3 class="h6 font-heading mb-1 text-primary">504 Plan Renewal & Accommodation Alignment</h3>
+                      <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> Tuesday, November 03, 2026 •
+                        1:00 PM EST</p>
+                      <p class="small text-secondary mb-0"><i class="bi bi-person me-1"></i> Lead Consultant:
+                        <strong>Sarah Kapoor</strong></p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- PAGE 5: DEADLINE REMINDERS -->
+            <div class="tab-pane fade" id="tab-reminders" role="tabpanel" aria-labelledby="tab-reminders-btn">
+              <div class="p-4 rounded-4 bg-surface border border-subtle shadow-sm">
+                <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-subtle">
+                  <div>
+                    <h2 class="h4 font-heading mb-1"><i class="bi bi-bell-fill text-coral me-2"></i> Managing Deadline
+                      Reminders</h2>
+                    <p class="small text-muted mb-0">Set and track key submission deadlines, evaluation dates, and
+                      school paperwork deadlines.</p>
+                  </div>
+                  <button onclick="let t=prompt('Enter new deadline task:'); if(t) alert('Reminder added: ' + t);"
+                    class="btn btn-sm btn-teal btn-custom"><i class="bi bi-plus-lg me-1"></i> Add Custom
+                    Reminder</button>
+                </div>
+
+                <div class="d-flex flex-column gap-3">
+                  <!-- Task 1 -->
+                  <div class="p-3 rounded-3 bg-warm border border-subtle d-flex align-items-start gap-3">
+                    <input class="form-check-input mt-1" type="checkbox" id="mTask1">
+                    <div class="flex-grow-1">
+                      <div class="d-flex align-items-center justify-content-between">
+                        <label for="mTask1" class="form-check-label fw-bold text-primary">Request Draft Goals from
+                          Lincoln Elementary School</label>
+                        <span class="badge bg-danger text-white">Urgent</span>
+                      </div>
+                      <p class="small text-coral mb-0 mt-1"><i class="bi bi-exclamation-triangle-fill me-1"></i> Due
+                        October 02, 2026 (Required 5 days prior to ARD meeting)</p>
+                    </div>
+                  </div>
+
+                  <!-- Task 2 -->
+                  <div class="p-3 rounded-3 bg-warm border border-subtle d-flex align-items-start gap-3">
+                    <input class="form-check-input mt-1" type="checkbox" id="mTask2">
+                    <div class="flex-grow-1">
+                      <div class="d-flex align-items-center justify-content-between">
+                        <label for="mTask2" class="form-check-label fw-bold text-primary">Sign & Submit Parent Input
+                          Statement to District</label>
+                        <span class="badge bg-warning text-dark">Medium</span>
+                      </div>
+                      <p class="small text-muted mb-0 mt-1"><i class="bi bi-calendar-event me-1"></i> Due October 05,
+                        2026</p>
+                    </div>
+                  </div>
+
+                  <!-- Task 3 -->
+                  <div class="p-3 rounded-3 bg-warm border border-subtle d-flex align-items-start gap-3">
+                    <input class="form-check-input mt-1" type="checkbox" id="mTask3">
+                    <div class="flex-grow-1">
+                      <div class="d-flex align-items-center justify-content-between">
+                        <label for="mTask3" class="form-check-label fw-bold text-primary">Schedule Independent
+                          Educational Evaluation (IEE) prep call</label>
+                        <span class="badge bg-accent-soft text-teal">Normal</span>
+                      </div>
+                      <p class="small text-muted mb-0 mt-1"><i class="bi bi-calendar-event me-1"></i> Due October 15,
+                        2026</p>
+                    </div>
+                  </div>
+
+                  <!-- Task 4 (Completed) -->
+                  <div class="p-3 rounded-3 bg-warm border border-subtle d-flex align-items-start gap-3 opacity-75">
+                    <input class="form-check-input mt-1" type="checkbox" id="mTask4" checked>
+                    <div class="flex-grow-1">
+                      <div class="d-flex align-items-center justify-content-between">
+                        <label for="mTask4"
+                          class="form-check-label text-decoration-line-through text-muted fw-bold">Upload Speech Therapy
+                          Private Evaluation Report</label>
+                        <span class="badge bg-sage-soft text-sage">Completed</span>
+                      </div>
+                      <p class="small text-sage mb-0 mt-1"><i class="bi bi-check-circle-fill me-1"></i> Completed
+                        September 18, 2026</p>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- PAGE 6: PAYMENT HISTORY -->
+            <div class="tab-pane fade" id="tab-payments" role="tabpanel" aria-labelledby="tab-payments-btn">
+              <div class="p-4 rounded-4 bg-surface border border-subtle shadow-sm">
+                <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-subtle">
+                  <div>
+                    <h2 class="h4 font-heading mb-1"><i class="bi bi-receipt-cutoff text-sage me-2"></i> Reviewing
+                      Payment History & Invoices</h2>
+                    <p class="small text-muted mb-0">Track consultation fees, retainers, and download itemized PDF
+                      receipts.</p>
+                  </div>
+                  <button onclick="alert('Generating annual tax summary statement PDF')"
+                    class="btn btn-sm btn-outline-teal btn-custom"><i class="bi bi-file-earmark-pdf me-1"></i> Export
+                    Statement</button>
+                </div>
+
+                <!-- Financial Billing Overview Card -->
+                <div class="row g-3 mb-4">
+                  <div class="col-md-4">
+                    <div class="p-3 rounded-3 bg-warm border border-subtle">
+                      <div class="small text-muted mb-1">Total Invoiced</div>
+                      <div class="h5 font-heading text-primary mb-0">$750.00</div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="p-3 rounded-3 bg-warm border border-subtle">
+                      <div class="small text-muted mb-1">Total Paid</div>
+                      <div class="h5 font-heading text-sage mb-0">$570.00</div>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="p-3 rounded-3 bg-warm border border-subtle">
+                      <div class="small text-muted mb-1">Pending Balance</div>
+                      <div class="h5 font-heading text-coral mb-0">$180.00</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="table-responsive">
+                  <table class="table table-hover align-middle text-muted small mb-0">
+                    <thead class="table-light">
+                      <tr>
+                        <th>Invoice ID</th>
+                        <th>Service Package</th>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong class="text-primary">#GPA-9821</strong></td>
+                        <td>Comprehensive IEP Document Review & Audit</td>
+                        <td>Sept 10, 2026</td>
+                        <td>$350.00</td>
+                        <td><span class="badge bg-sage-soft text-sage px-2 py-1">Paid</span></td>
+                        <td><button onclick="alert('Downloading Receipt #GPA-9821.pdf')"
+                            class="btn btn-link text-teal p-0"><i class="bi bi-download me-1"></i> PDF</button></td>
+                      </tr>
+                      <tr>
+                        <td><strong class="text-primary">#GPA-9704</strong></td>
+                        <td>Pre-Meeting Strategy & Agenda Prep</td>
+                        <td>Aug 22, 2026</td>
+                        <td>$220.00</td>
+                        <td><span class="badge bg-sage-soft text-sage px-2 py-1">Paid</span></td>
+                        <td><button onclick="alert('Downloading Receipt #GPA-9704.pdf')"
+                            class="btn btn-link text-teal p-0"><i class="bi bi-download me-1"></i> PDF</button></td>
+                      </tr>
+                      <tr>
+                        <td><strong class="text-primary">#GPA-9910</strong></td>
+                        <td>Evaluation Report Score Analysis</td>
+                        <td>Oct 01, 2026</td>
+                        <td>$180.00</td>
+                        <td><span class="badge bg-coral-soft text-coral px-2 py-1">Pending</span></td>
+                        <td><button onclick="alert('Opening secure online payment portal for Invoice #GPA-9910')"
+                            class="btn btn-xs btn-coral btn-custom py-1 px-2">Pay Now</button></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- PAGE 7: DOCUMENT REPOSITORY -->
+            <div class="tab-pane fade" id="tab-documents" role="tabpanel" aria-labelledby="tab-documents-btn">
+              <div class="p-4 rounded-4 bg-surface border border-subtle shadow-sm">
+                <div class="d-flex align-items-center justify-content-between mb-4 pb-2 border-bottom border-subtle">
+                  <div>
+                    <h2 class="h4 font-heading mb-1"><i class="bi bi-folder-fill text-teal me-2"></i> Stored Document
+                      Repository</h2>
+                    <p class="small text-muted mb-0">Secure vault for evaluations, school records, FIIE reports, and IEP
+                      agreements.</p>
+                  </div>
+                  <button onclick="alert('Upload document vault trigger')" class="btn btn-sm btn-teal btn-custom"><i
+                      class="bi bi-upload me-1"></i> Upload File</button>
+                </div>
+
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <div
+                      class="p-3 rounded-3 bg-warm border border-subtle d-flex align-items-center justify-content-between">
+                      <div class="d-flex align-items-center gap-2">
+                        <i class="bi bi-file-earmark-pdf fs-3 text-coral"></i>
+                        <div>
+                          <strong class="text-primary small d-block">Full FIIE Evaluation Report 2026.pdf</strong>
+                          <span class="small text-muted">Uploaded Sept 12 • 4.2 MB</span>
+                        </div>
+                      </div>
+                      <button onclick="alert('Downloading FIIE Evaluation Report...')"
+                        class="btn btn-xs btn-outline-teal btn-custom"><i class="bi bi-download"></i></button>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div
+                      class="p-3 rounded-3 bg-warm border border-subtle d-flex align-items-center justify-content-between">
+                      <div class="d-flex align-items-center gap-2">
+                        <i class="bi bi-file-earmark-word fs-3 text-teal"></i>
+                        <div>
+                          <strong class="text-primary small d-block">Draft Accommodations Matrix v3.docx</strong>
+                          <span class="small text-muted">Uploaded Sept 20 • 1.8 MB</span>
+                        </div>
+                      </div>
+                      <button onclick="alert('Downloading Draft Accommodations...')"
+                        class="btn btn-xs btn-outline-teal btn-custom"><i class="bi bi-download"></i></button>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div
+                      class="p-3 rounded-3 bg-warm border border-subtle d-flex align-items-center justify-content-between">
+                      <div class="d-flex align-items-center gap-2">
+                        <i class="bi bi-file-earmark-text fs-3 text-sage"></i>
+                        <div>
+                          <strong class="text-primary small d-block">Private Speech Therapy Assessment.pdf</strong>
+                          <span class="small text-muted">Uploaded Sept 18 • 2.5 MB</span>
+                        </div>
+                      </div>
+                      <button onclick="alert('Downloading Speech Report...')"
+                        class="btn btn-xs btn-outline-teal btn-custom"><i class="bi bi-download"></i></button>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div
+                      class="p-3 rounded-3 bg-warm border border-subtle d-flex align-items-center justify-content-between">
+                      <div class="d-flex align-items-center gap-2">
+                        <i class="bi bi-file-earmark-pdf fs-3 text-coral"></i>
+                        <div>
+                          <strong class="text-primary small d-block">Lincoln Elementary 504 Plan 2025.pdf</strong>
+                          <span class="small text-muted">Uploaded Aug 05 • 3.1 MB</span>
+                        </div>
+                      </div>
+                      <button onclick="alert('Downloading 504 Plan...')"
+                        class="btn btn-xs btn-outline-teal btn-custom"><i class="bi bi-download"></i></button>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DASHBOARD SIMPLE FOOTER BAR -->
+  <footer class="py-3 border-top border-subtle bg-surface text-center text-muted small">
+    <div class="container">
+      <span>© 2026 Guided Path Advocacy & IEP Consulting. Student & Family Portal.</span>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    function closeDashboardSideMenuMobile() {
+      const el = document.getElementById('dashboardSideMenuOffcanvas');
+      if (el) {
+        const bsOffcanvas = bootstrap.Offcanvas.getInstance(el);
+        if (bsOffcanvas) {
+          bsOffcanvas.hide();
+        }
+      }
+    }
+  </script>
+</body>
+
+</html>
