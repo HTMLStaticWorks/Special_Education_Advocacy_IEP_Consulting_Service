@@ -331,8 +331,15 @@ function initInsightsFiltering() {
    9. BACK TO TOP BUTTON
    ========================================================================== */
 function initBackToTop() {
-  const btn = document.querySelector('.back-to-top');
-  if (!btn) return;
+  let btn = document.querySelector('.back-to-top');
+  if (!btn) {
+    btn = document.createElement('button');
+    btn.className = 'back-to-top';
+    btn.setAttribute('type', 'button');
+    btn.setAttribute('aria-label', 'Back to top');
+    btn.innerHTML = '<i class="bi bi-arrow-up"></i>';
+    document.body.appendChild(btn);
+  }
 
   window.addEventListener('scroll', () => {
     if (window.scrollY > 300) {

@@ -244,12 +244,40 @@ a:hover {
   font-family: var(--font-heading);
   font-size: 1.4rem;
   font-weight: 600;
-  color: var(--text-primary);
+  color: var(--text-primary) !important;
+  transition: color var(--transition-fast);
 }
 
 .navbar-brand-logo i {
   font-size: 1.75rem;
   color: var(--color-primary);
+  transition: transform var(--transition-fast), color var(--transition-fast);
+}
+
+.navbar-brand-logo:hover i {
+  transform: rotate(12deg) scale(1.1);
+  color: var(--color-primary-hover);
+}
+
+.navbar-brand-logo:hover span {
+  color: var(--color-primary);
+}
+
+.navbar-brand-logo:hover small {
+  color: var(--color-primary-hover) !important;
+}
+
+[data-theme="dark"] .navbar-brand-logo {
+  color: #F8FAFC !important;
+}
+
+[data-theme="dark"] .navbar-brand-logo:hover span {
+  color: #4FB0BD !important;
+}
+
+[data-theme="dark"] .navbar-brand-logo:hover small {
+  color: #E2E8F0 !important;
+  opacity: 1;
 }
 
 .nav-link-custom {
@@ -261,9 +289,78 @@ a:hover {
   transition: all var(--transition-fast);
 }
 
-.nav-link-custom:hover, .nav-link-custom.active {
+.nav-link-custom:hover {
   color: var(--color-primary) !important;
   background-color: var(--bg-accent-soft);
+}
+
+.nav-link-custom.active {
+  color: var(--color-primary) !important;
+  background-color: var(--bg-accent-soft);
+  font-weight: 700;
+}
+
+.nav-link-custom.active:hover {
+  color: var(--color-primary-hover) !important;
+  background-color: var(--bg-accent-soft) !important;
+  opacity: 0.92;
+}
+
+/* Dropdown Caret Contrast Fix when Active */
+.nav-link-custom.dropdown-toggle::after {
+  border-top-color: currentColor;
+  transition: transform var(--transition-fast), border-top-color var(--transition-fast);
+}
+
+.nav-link-custom.dropdown-toggle.active::after {
+  border-top-color: var(--color-primary) !important;
+}
+
+[data-theme="dark"] .nav-link-custom.dropdown-toggle.active::after {
+  border-top-color: var(--color-primary-hover) !important;
+}
+
+/* Pathway Card Links Hover State (Home 2) */
+.pathway-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: color var(--transition-fast), opacity var(--transition-fast);
+}
+
+.pathway-card-link i {
+  transition: transform var(--transition-fast);
+}
+
+.pathway-card-link:hover {
+  opacity: 0.85;
+}
+
+.pathway-card-link:hover i {
+  transform: translateX(4px);
+}
+
+[dir="rtl"] .pathway-card-link:hover i {
+  transform: translateX(-4px);
+}
+
+/* Mobile Hero & Action Buttons Uniform Sizing */
+@media (max-width: 575.98px) {
+  .hero-action-btns .btn,
+  .cta-action-btns .btn {
+    width: 100% !important;
+    text-align: center;
+  }
+
+  .service-card-btns {
+    flex-direction: column !important;
+    gap: 0.75rem !important;
+  }
+
+  .service-card-btns .btn {
+    width: 100% !important;
+    text-align: center;
+  }
 }
 
 /* Dropdown Menu Styles */
@@ -581,6 +678,90 @@ option {
   padding: 0.5rem;
 }
 
+/* Form Select Dropdown Chevron Symbol Dark Mode High Contrast */
+[data-theme="dark"] .form-select,
+[data-theme="dark"] .form-select-custom,
+[data-theme="dark"] select {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23F8FAFC' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e") !important;
+}
+
+/* Social Buttons & Auth Link Hover States (Login/Signup Pages) */
+.btn-social {
+  background-color: var(--bg-surface);
+  color: var(--text-primary) !important;
+  border: 1px solid var(--border-color);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 0.65rem 1rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+
+.btn-social:hover {
+  background-color: var(--bg-accent-soft);
+  border-color: var(--color-primary);
+  color: var(--color-primary) !important;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-social svg,
+.btn-social i {
+  transition: transform var(--transition-fast);
+}
+
+.btn-social:hover svg,
+.btn-social:hover i {
+  transform: scale(1.15);
+}
+
+.password-toggle-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.password-toggle-group .form-control {
+  width: 100%;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  background: transparent;
+  border: none;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  cursor: pointer;
+  z-index: 5;
+  transition: all var(--transition-fast);
+}
+
+.password-toggle-btn:hover {
+  color: var(--color-primary) !important;
+  transform: translateY(-50%) scale(1.2);
+}
+
+[dir="rtl"] .password-toggle-btn {
+  right: auto;
+  left: 0.75rem;
+}
+
+.text-teal {
+  color: var(--color-primary) !important;
+  transition: color var(--transition-fast), opacity var(--transition-fast);
+}
+
+.text-teal:hover {
+  color: var(--color-primary-hover) !important;
+  text-decoration: underline !important;
+}
+
 /* Labels & Form Text */
 label,
 .form-label,
@@ -725,6 +906,18 @@ label,
 
 .accordion-custom .accordion-button::after {
   filter: grayscale(1);
+  transition: transform var(--transition-fast), filter var(--transition-fast);
+}
+
+[data-theme="dark"] .accordion-button::after,
+[data-theme="dark"] .accordion-custom .accordion-button::after {
+  filter: brightness(0) invert(1) !important;
+}
+
+[dir="rtl"] .accordion-button::after,
+[dir="rtl"] .accordion-custom .accordion-button::after {
+  margin-left: 0 !important;
+  margin-right: auto !important;
 }
 
 .accordion-custom .accordion-body {
@@ -796,6 +989,8 @@ label,
 
 .footer-links li {
   margin-bottom: 0.6rem;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .footer-links a {
@@ -806,6 +1001,27 @@ label,
 
 .footer-links a:hover {
   color: var(--color-primary);
+}
+
+/* Bottom Footer Utility Links (Privacy Policy, Terms, Accessibility) Hover */
+.footer-custom a.text-muted,
+.footer-legal-link,
+footer a.text-muted {
+  color: var(--text-muted) !important;
+  transition: color var(--transition-fast), text-decoration var(--transition-fast);
+}
+
+.footer-custom a.text-muted:hover,
+.footer-legal-link:hover,
+footer a.text-muted:hover {
+  color: var(--color-primary) !important;
+  text-decoration: underline !important;
+}
+
+[data-theme="dark"] .footer-custom a.text-muted:hover,
+[data-theme="dark"] .footer-legal-link:hover,
+[data-theme="dark"] footer a.text-muted:hover {
+  color: var(--color-primary-hover) !important;
 }
 
 /* Footer & Sidebar Social Icons with Animated Hover Effect */
@@ -839,6 +1055,34 @@ label,
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
+}
+
+/* Contact Card Responsiveness & Text Overflow Protection */
+.contact-info-card {
+  word-break: break-word;
+  overflow-wrap: anywhere;
+}
+
+.min-w-0 {
+  min-width: 0 !important;
+}
+
+.text-break {
+  word-break: break-word !important;
+  overflow-wrap: anywhere !important;
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .contact-info-card {
+    padding: 1.5rem !important;
+  }
+
+  /* 1024px View: Align Footer by 2x2 Grid */
+  .footer-custom .row > [class*="col-"] {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+    width: 50% !important;
+  }
 }
 
 /* Back to Top Button */
@@ -993,7 +1237,9 @@ label,
   color: var(--text-secondary);
   font-weight: 600;
   font-size: 0.95rem;
-  padding: 0.8rem 1rem;
+  padding: 0 1rem;
+  min-height: 48px;
+  height: 48px;
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
@@ -1001,6 +1247,7 @@ label,
   transition: all var(--transition-fast);
   margin-bottom: 0.35rem;
   text-align: left;
+  box-sizing: border-box;
 }
 
 .dashboard-side-nav .nav-link i {
@@ -1019,7 +1266,13 @@ label,
   background-color: var(--color-primary) !important;
 }
 
-.dashboard-side-nav .nav-link.active i {
+.dashboard-side-nav .nav-link.active:hover {
+  color: #FFFFFF !important;
+  background-color: var(--color-primary-hover) !important;
+}
+
+.dashboard-side-nav .nav-link.active i,
+.dashboard-side-nav .nav-link.active:hover i {
   color: #FFFFFF !important;
 }
 

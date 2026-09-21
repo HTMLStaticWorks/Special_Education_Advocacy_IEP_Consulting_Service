@@ -19,23 +19,25 @@
   <!-- HEADER (Brand & Controls Only) -->
   <header class="navbar navbar-custom sticky-top py-3 border-bottom border-subtle bg-surface">
     <div class="container d-flex align-items-center justify-content-between">
-      <div class="d-flex align-items-center gap-2">
-        <!-- Hamburger Menu Button to toggle Side Menu on Mobile & Tablet (< 1200px including 1024px) -->
-        <button class="btn p-1 border-0 shadow-none me-1 d-xl-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#dashboardSideMenuOffcanvas" aria-controls="dashboardSideMenuOffcanvas" aria-label="Toggle Dashboard Side Menu">
+      <a class="navbar-brand navbar-brand-logo" href="index.html">
+        <i class="bi bi-compass-fill"></i>
+        <span>Guided Path <small class="d-block fs-6 text-muted fw-normal">Advocacy & IEP Consulting</small></span>
+      </a>
+
+      <div class="d-flex align-items-center gap-2 ms-auto">
+        <!-- Theme & RTL Controls: visible on desktop (>= 1200px) -->
+        <div class="d-none d-xl-flex align-items-center gap-2">
+          <button class="rtl-toggle-btn" type="button" aria-label="Toggle RTL mode">RTL</button>
+          <button class="theme-toggle-btn" type="button" aria-label="Toggle theme">
+            <i class="bi bi-moon-stars-fill"></i>
+          </button>
+        </div>
+
+        <!-- Hamburger Menu Button to toggle Side Menu on Mobile & Tablet (< 1200px) -->
+        <button class="btn p-1 border-0 shadow-none d-xl-none" type="button" data-bs-toggle="offcanvas"
+          data-bs-target="#dashboardSideMenuOffcanvas" aria-controls="dashboardSideMenuOffcanvas"
+          aria-label="Toggle Dashboard Side Menu">
           <i class="bi bi-list fs-1 text-primary"></i>
-        </button>
-
-        <a class="navbar-brand navbar-brand-logo" href="index.html">
-          <i class="bi bi-compass-fill"></i>
-          <span>Guided Path <small class="d-block fs-6 text-muted fw-normal">Advocacy & IEP Consulting</small></span>
-        </a>
-      </div>
-
-      <!-- Theme & RTL Controls: visible ONLY on desktop (>= 1200px), removed from header on mobile/tab (< 1200px) -->
-      <div class="d-none d-xl-flex align-items-center gap-2 ms-auto">
-        <button class="rtl-toggle-btn me-1" type="button" aria-label="Toggle RTL mode">RTL</button>
-        <button class="theme-toggle-btn" type="button" aria-label="Toggle theme">
-          <i class="bi bi-moon-stars-fill"></i>
         </button>
       </div>
     </div>
@@ -71,7 +73,7 @@
         <div class="col-6 col-md-3">
           <div class="p-3 rounded-3 bg-warm border border-subtle">
             <div class="small text-muted mb-1">Overall Plan Progress</div>
-            <div class="h4 font-heading text-sage mb-0">78% Complete</div>
+            <div class="h4 font-heading text-sage mb-0">78% done</div>
           </div>
         </div>
         <div class="col-6 col-md-3">
@@ -101,17 +103,20 @@
         <!-- ========================================== -->
         <div class="col-xl-3">
           <!-- Mobile Side Menu Quick Action Button (< 1200px) -->
-          <button class="btn btn-teal w-100 d-xl-none mb-3 d-flex align-items-center justify-content-center gap-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#dashboardSideMenuOffcanvas">
+          <button class="btn btn-teal w-100 d-xl-none mb-3 d-flex align-items-center justify-content-center gap-2"
+            type="button" data-bs-toggle="offcanvas" data-bs-target="#dashboardSideMenuOffcanvas">
             <i class="bi bi-list fs-5"></i>
             <span>Open Dashboard Side Menu</span>
           </button>
 
-          <div class="offcanvas-xl offcanvas-start bg-surface border-end border-subtle p-3 p-xl-0" tabindex="-1" id="dashboardSideMenuOffcanvas" aria-labelledby="dashboardSideMenuOffcanvasLabel">
+          <div class="offcanvas-xl offcanvas-start bg-surface border-end border-subtle p-3 p-xl-0" tabindex="-1"
+            id="dashboardSideMenuOffcanvas" aria-labelledby="dashboardSideMenuOffcanvasLabel">
             <div class="offcanvas-header border-bottom border-subtle mb-3 d-xl-none">
               <h5 class="offcanvas-title font-heading text-primary mb-0" id="dashboardSideMenuOffcanvasLabel">
                 <i class="bi bi-compass-fill text-teal me-2"></i> Dashboard Menu
               </h5>
-              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#dashboardSideMenuOffcanvas" aria-label="Close"></button>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                data-bs-target="#dashboardSideMenuOffcanvas" aria-label="Close"></button>
             </div>
             <div class="offcanvas-body p-0">
               <aside class="dashboard-sidebar w-100">
@@ -186,15 +191,16 @@
                   <li class="nav-item d-xl-none pt-3 mt-3 border-top border-subtle">
                     <div class="small fw-bold text-muted uppercase tracking-wider mb-2">Display Mode:</div>
                     <div class="d-flex align-items-center gap-2">
-                      <button class="rtl-toggle-btn btn btn-sm btn-outline-teal flex-fill" type="button" aria-label="Toggle RTL mode">RTL</button>
-                      <button class="theme-toggle-btn btn btn-sm btn-outline-teal flex-fill" type="button" aria-label="Toggle theme">
-                        <i class="bi bi-moon-stars-fill me-1"></i> Theme
+                      <button class="rtl-toggle-btn" type="button" aria-label="Toggle RTL mode">RTL</button>
+                      <button class="theme-toggle-btn" type="button" aria-label="Toggle theme">
+                        <i class="bi bi-moon-stars-fill"></i>
                       </button>
                     </div>
                   </li>
 
                   <li class="nav-item pt-2 border-top border-subtle mt-2">
-                    <a href="login.html" onclick="alert('You have logged out successfully.');" class="nav-link nav-link-logout w-100">
+                    <a href="login.html" onclick="alert('You have logged out successfully.');"
+                      class="nav-link nav-link-logout w-100">
                       <i class="bi bi-box-arrow-right me-1"></i> Log Out
                     </a>
                   </li>
@@ -525,7 +531,8 @@
                       <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> Thursday, October 08, 2026 •
                         10:00 AM - 11:00 AM EST</p>
                       <p class="small text-secondary mb-3"><i class="bi bi-person me-1"></i> Lead Consultant:
-                        <strong>Eleanor Vance, M.Ed.</strong></p>
+                        <strong>Eleanor Vance, M.Ed.</strong>
+                      </p>
                       <div class="d-flex gap-2 flex-wrap">
                         <button onclick="alert('Joining Virtual Video Room #1082')"
                           class="btn btn-xs btn-teal btn-custom py-1 px-3"><i class="bi bi-camera-video me-1"></i> Join
@@ -547,7 +554,8 @@
                       <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> Tuesday, October 20, 2026 • 2:30
                         PM - 3:30 PM EST</p>
                       <p class="small text-secondary mb-3"><i class="bi bi-person me-1"></i> Lead Consultant:
-                        <strong>Marcus Rivera, M.A.</strong></p>
+                        <strong>Marcus Rivera, M.A.</strong>
+                      </p>
                       <div class="d-flex gap-2 flex-wrap">
                         <button onclick="alert('Meeting invitation resent to email')"
                           class="btn btn-xs btn-outline-teal btn-custom py-1 px-2"><i
@@ -566,7 +574,8 @@
                       <p class="small text-muted mb-2"><i class="bi bi-clock me-1"></i> Tuesday, November 03, 2026 •
                         1:00 PM EST</p>
                       <p class="small text-secondary mb-0"><i class="bi bi-person me-1"></i> Lead Consultant:
-                        <strong>Sarah Kapoor</strong></p>
+                        <strong>Sarah Kapoor</strong>
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -840,7 +849,10 @@
         }
       }
     }
-  </script>
+  <button class="back-to-top" aria-label="Back to top">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
 </body>
 
 </html>
