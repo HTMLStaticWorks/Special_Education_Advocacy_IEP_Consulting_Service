@@ -229,6 +229,23 @@ a:hover {
   padding: 1rem 0;
   transition: all var(--transition-normal);
   z-index: 1040;
+  position: relative;
+}
+
+@media (max-width: 1199.98px) {
+  .navbar-custom .navbar-collapse {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    background-color: var(--bg-surface);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow-md);
+    padding: 1.25rem 1.5rem;
+    z-index: 1050;
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+  }
 }
 
 .navbar-custom.scrolled {
@@ -1195,6 +1212,21 @@ footer a.text-muted:hover {
   content: "\F135";
 }
 
+[dir="rtl"] .form-select,
+[dir="rtl"] .form-select-custom,
+[dir="rtl"] select {
+  text-align: right !important;
+  direction: rtl !important;
+  background-position: left 0.75rem center !important;
+  padding-right: 1rem !important;
+  padding-left: 2.25rem !important;
+}
+
+[dir="rtl"] option {
+  text-align: right !important;
+  direction: rtl !important;
+}
+
 /* ==========================================================================
    DASHBOARD SIDEBAR MENU STYLES
    ========================================================================== */
@@ -1301,6 +1333,54 @@ footer a.text-muted:hover {
 [dir="rtl"] .dashboard-side-nav .nav-link .badge {
   margin-left: 0;
   margin-right: auto;
+}
+
+/* Insights Page Tablet View 3rd Card Centering */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  #blogGrid > :nth-child(3) {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+/* Dashboard Action Buttons Uniform Sizing on Mobile and Tablet View */
+@media (max-width: 1199.98px) {
+  .dashboard-header-actions,
+  .dashboard-card-header-actions,
+  .dashboard-action-btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    width: 100%;
+  }
+
+  .dashboard-header-actions .btn,
+  .dashboard-card-header-actions .btn,
+  .dashboard-action-btn-group .btn,
+  .dashboard-sidebar .btn,
+  .dashboard-btn-uniform {
+    font-size: 0.9rem !important;
+    padding: 0.6rem 1rem !important;
+    min-height: 42px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .dashboard-header-actions .btn,
+  .dashboard-card-header-actions .btn {
+    flex: 1 1 100%;
+    width: 100% !important;
+    text-align: center;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .dashboard-tab-actions .btn {
+    width: 100% !important;
+    margin-bottom: 0.5rem;
+  }
 }
 
 
