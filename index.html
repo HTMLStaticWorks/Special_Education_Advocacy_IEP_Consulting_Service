@@ -51,12 +51,14 @@
           <li class="nav-item"><a class="nav-link nav-link-custom" href="dashboard.html">Dashboard</a></li>
         </ul>
 
-        <div class="d-flex align-items-center gap-2 mt-3 mt-xl-0 flex-wrap flex-xl-nowrap">
-          <button class="rtl-toggle-btn me-2" type="button" aria-label="Toggle RTL mode">RTL</button>
-          <button class="theme-toggle-btn me-2" type="button" aria-label="Toggle theme">
+        <div class="header-actions d-flex align-items-center gap-2 mt-3 mt-xl-0 flex-wrap flex-xl-nowrap">
+          <button class="rtl-toggle-btn" type="button" aria-label="Toggle RTL mode" title="Toggle RTL / LTR direction">
+            <i class="bi bi-arrow-left-right"></i>
+          </button>
+          <button class="theme-toggle-btn" type="button" aria-label="Toggle theme" title="Toggle dark/light mode">
             <i class="bi bi-moon-stars-fill"></i>
           </button>
-          <a href="signup.html" class="btn btn-sm btn-outline-teal btn-custom">Sign Up</a>
+          <a href="contact.html" class="btn btn-sm btn-teal btn-custom ms-1"><i class="bi bi-calendar-check me-1"></i> Book Consultation</a>
         </div>
       </div>
     </div>
@@ -88,36 +90,19 @@
 
         <div class="col-lg-6">
           <div class="position-relative">
-            <div class="p-4 p-md-5 rounded-4 bg-secondary-custom shadow-lg border border-subtle">
-              <div class="d-flex align-items-center gap-3 mb-4">
-                <div class="card-icon card-icon-coral mb-0">
-                  <i class="bi bi-journal-text fs-2"></i>
-                </div>
-                <div>
-                  <h3 class="h5 font-heading mb-1">IEP Preparation & Guidance</h3>
-                  <p class="small text-muted mb-0">Structured support before your school meeting</p>
+            <div class="p-3 p-md-4 rounded-4 bg-secondary-custom shadow-lg border border-subtle">
+              <div class="position-relative rounded-3 overflow-hidden shadow-sm mb-3" style="height: 380px;">
+                <img src="assets/img/hero-consulting.jpg" alt="Special education advocate consulting with parents over IEP documentation" class="w-100 h-100 object-fit-cover" style="object-position: center 25%;">
+                <div class="position-absolute bottom-0 start-0 end-0 p-3 bg-dark bg-opacity-75 text-white d-flex align-items-center justify-content-between">
+                  <div class="d-flex align-items-center gap-2">
+                    <span class="badge bg-teal text-white px-2 py-1"><i class="bi bi-shield-check me-1"></i> Certified</span>
+                    <span class="small fw-semibold">1-on-1 Family IEP Strategy</span>
+                  </div>
+                  <span class="small text-white-50">Confidential Consulting</span>
                 </div>
               </div>
 
-              <!-- SVG Mockup Graphic -->
-              <svg viewBox="0 0 400 240" class="w-100 rounded-3 shadow-sm bg-surface p-3" aria-img-label="Consultation document layout graphic">
-                <rect x="10" y="10" width="380" height="220" rx="8" fill="var(--bg-primary)" stroke="var(--border-color)" stroke-width="1.5" />
-                <rect x="30" y="30" width="140" height="12" rx="6" fill="var(--color-primary)" opacity="0.8" />
-                <rect x="30" y="55" width="220" height="8" rx="4" fill="var(--text-muted)" opacity="0.3" />
-                <rect x="30" y="70" width="180" height="8" rx="4" fill="var(--text-muted)" opacity="0.3" />
-                
-                <rect x="30" y="95" width="340" height="40" rx="6" fill="var(--bg-accent-soft)" stroke="var(--color-primary)" stroke-width="1" />
-                <circle cx="50" cy="115" r="8" fill="var(--color-primary)" />
-                <rect x="70" y="110" width="180" height="10" rx="5" fill="var(--text-primary)" opacity="0.7" />
-
-                <rect x="30" y="145" width="340" height="40" rx="6" fill="var(--bg-sage-soft)" stroke="var(--color-secondary)" stroke-width="1" />
-                <circle cx="50" cy="165" r="8" fill="var(--color-secondary)" />
-                <rect x="70" y="160" width="200" height="10" rx="5" fill="var(--text-primary)" opacity="0.7" />
-
-                <rect x="30" y="195" width="120" height="20" rx="10" fill="var(--color-accent)" opacity="0.9" />
-              </svg>
-
-              <div class="mt-4 p-3 rounded-3 bg-surface border border-subtle d-flex align-items-center gap-3">
+              <div class="p-3 rounded-3 bg-surface border border-subtle d-flex align-items-center gap-3">
                 <i class="bi bi-quote fs-2 text-coral"></i>
                 <p class="small text-muted mb-0 italic">"Our goal is to ensure families walk into every IEP meeting with clarity, organized documents, and focused priorities."</p>
               </div>
@@ -199,7 +184,7 @@
             <i class="bi bi-info-circle-fill"></i>
             <strong>Consulting Notice:</strong> Guided Path Advocacy provides educational consulting and advocacy support. Our services do not replace legal, medical, or psychological advice.
           </div>
-          <a href="contact.html" class="btn btn-sage btn-custom mt-3">Book Consultation</a>
+          <a href="contact.html" class="btn btn-sage btn-custom mt-3"><i class="bi bi-calendar-check me-2"></i> Book Consultation</a>
         </div>
 
         <div class="col-lg-6 offset-lg-1">

@@ -44,15 +44,21 @@ function initThemeSystem() {
 function updateThemeIcons(theme) {
   const themeToggleBtns = document.querySelectorAll('.theme-toggle-btn');
   themeToggleBtns.forEach(btn => {
-    const icon = btn.querySelector('i');
-    if (icon) {
-      if (theme === 'dark') {
-        icon.className = 'bi bi-sun-fill';
-        btn.setAttribute('aria-label', 'Switch to light mode');
-      } else {
-        icon.className = 'bi bi-moon-stars-fill';
-        btn.setAttribute('aria-label', 'Switch to dark mode');
-      }
+    let icon = btn.querySelector('i');
+    if (!icon) {
+      icon = document.createElement('i');
+      btn.appendChild(icon);
+    }
+    if (theme === 'dark') {
+      icon.className = 'bi bi-sun-fill';
+      btn.setAttribute('aria-label', 'Switch to light mode');
+      btn.setAttribute('title', 'Switch to light mode');
+      btn.classList.add('active');
+    } else {
+      icon.className = 'bi bi-moon-stars-fill';
+      btn.setAttribute('aria-label', 'Switch to dark mode');
+      btn.setAttribute('title', 'Switch to dark mode');
+      btn.classList.remove('active');
     }
   });
 }
@@ -83,8 +89,14 @@ function initRTLSystem() {
 function updateRTLBtnText(dir) {
   const rtlToggleBtns = document.querySelectorAll('.rtl-toggle-btn');
   rtlToggleBtns.forEach(btn => {
-    btn.textContent = dir === 'rtl' ? 'LTR' : 'RTL';
+    btn.innerHTML = '<i class="bi bi-arrow-left-right"></i>';
     btn.setAttribute('aria-label', dir === 'rtl' ? 'Switch to LTR direction' : 'Switch to RTL direction');
+    btn.setAttribute('title', dir === 'rtl' ? 'Switch to LTR mode' : 'Switch to RTL mode');
+    if (dir === 'rtl') {
+      btn.classList.add('active');
+    } else {
+      btn.classList.remove('active');
+    }
   });
 }
 
@@ -380,3 +392,24 @@ function updateAuditScore() {
     desc.textContent = 'If any criteria are unverified or missing, our advocacy consultants can audit your paperwork line-by-line.';
   }
 }
+
+/* ==========================================================================
+   12. DASHBOARD SIDEBAR CONTROLLER (FULL HEIGHT MOBILE/TABLET)
+   ========================================================================== */
+function toggleDashboardSidebar() {
+  const sidebar = document.getElementById('dashboardSidebar');
+  const backdrop = document.getElementById('dashboardBackdrop');
+  if (sidebar) sidebar.classList.toggle('show-sidebar');
+  if (backdrop) backdrop.classList.toggle('active');
+}
+
+function closeDashboardSidebar() {
+  const sidebar = document.getElementById('dashboardSidebar');
+  const backdrop = document.getElementById('dashboardBackdrop');
+  if (sidebar) sidebar.classList.remove('show-sidebar');
+  if (backdrop) backdrop.classList.remove('active');
+}
+
+window.toggleDashboardSidebar = toggleDashboardSidebar;
+window.closeDashboardSidebar = closeDashboardSidebar;
+window.closeDashboardSideMenuMobile = closeDashboardSidebar;

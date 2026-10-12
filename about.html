@@ -52,26 +52,70 @@
           <li class="nav-item"><a class="nav-link nav-link-custom" href="dashboard.html">Dashboard</a></li>
         </ul>
 
-        <div class="d-flex align-items-center gap-2 mt-3 mt-xl-0 flex-wrap flex-xl-nowrap">
-          <button class="rtl-toggle-btn me-2" type="button" aria-label="Toggle RTL mode">RTL</button>
-          <button class="theme-toggle-btn me-2" type="button" aria-label="Toggle theme">
+        <div class="header-actions d-flex align-items-center gap-2 mt-3 mt-xl-0 flex-wrap flex-xl-nowrap">
+          <button class="rtl-toggle-btn" type="button" aria-label="Toggle RTL mode" title="Toggle RTL / LTR direction">
+            <i class="bi bi-arrow-left-right"></i>
+          </button>
+          <button class="theme-toggle-btn" type="button" aria-label="Toggle theme" title="Toggle dark/light mode">
             <i class="bi bi-moon-stars-fill"></i>
           </button>
-          <a href="signup.html" class="btn btn-sm btn-outline-teal btn-custom">Sign Up</a>
+          <a href="contact.html" class="btn btn-sm btn-teal btn-custom ms-1"><i class="bi bi-calendar-check me-1"></i> Book Consultation</a>
         </div>
       </div>
     </div>
   </nav>
 
-  <!-- HERO STORY -->
+  <!-- HERO STORY WITH THEMATIC PHOTOGRAPHY -->
   <header class="section-padding bg-surface border-bottom border-subtle">
-    <div class="container text-center max-w-800">
-      <span class="section-label">Our Practice Story</span>
-      <h1 class="display-4 font-heading mb-4">Empowering Families With Clarity & Confidence</h1>
-      <p class="lead text-muted fs-5 mb-0">
-        Guided Path Advocacy was established to bridge the gap between complex special education terminology and
-        practical family support. We believe that informed parents are a child's best educational partners.
-      </p>
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-6">
+          <span class="section-label mb-3"><i class="bi bi-shield-check me-1"></i> Our Practice Story</span>
+          <h1 class="display-4 font-heading mb-4 text-primary-dark">
+            Empowering Families With Clarity & Confidence
+          </h1>
+          <p class="lead text-muted fs-5 mb-4">
+            Guided Path Advocacy was established to bridge the gap between complex special education terminology and practical family support. We believe that informed parents are a child's best educational partners.
+          </p>
+          <div class="d-flex flex-wrap gap-3 mb-4">
+            <div class="p-3 rounded-3 bg-warm border border-subtle flex-grow-1">
+              <div class="h4 font-heading text-teal mb-0">500+</div>
+              <div class="small text-muted">Families Supported</div>
+            </div>
+            <div class="p-3 rounded-3 bg-warm border border-subtle flex-grow-1">
+              <div class="h4 font-heading text-coral mb-0">15+ Yrs</div>
+              <div class="small text-muted">Special Ed Advocacy</div>
+            </div>
+            <div class="p-3 rounded-3 bg-warm border border-subtle flex-grow-1">
+              <div class="h4 font-heading text-sage mb-0">100%</div>
+              <div class="small text-muted">Student-Centered</div>
+            </div>
+          </div>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="contact.html" class="btn btn-teal btn-custom btn-lg"><i class="bi bi-calendar-check me-2"></i> Book Consultation</a>
+            <a href="services.html" class="btn btn-outline-teal btn-custom btn-lg">Explore Services</a>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="about-hero-visual">
+            <img src="assets/img/about-hero.jpg" alt="Special education consultant mentoring family with IEP plans in supportive office" loading="lazy">
+            <div class="about-hero-badge-card">
+              <div class="d-flex align-items-center gap-2 mb-2">
+                <i class="bi bi-quote fs-3 text-coral"></i>
+                <span class="fw-bold small text-primary">Our Advocacy Principle</span>
+              </div>
+              <p class="small text-secondary mb-2 italic">
+                "Every child deserves an educational program designed around their individual potential, not standard school checklists."
+              </p>
+              <div class="d-flex align-items-center gap-2">
+                <img src="assets/img/eleanor-vance.jpg" alt="Eleanor Vance" class="rounded-circle" style="width: 32px; height: 32px; object-fit: cover;">
+                <span class="small text-muted"><strong>Eleanor Vance, M.Ed.</strong> — Founder & Lead Consultant</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
 

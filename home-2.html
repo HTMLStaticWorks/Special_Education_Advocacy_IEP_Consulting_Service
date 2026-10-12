@@ -52,62 +52,76 @@
           <li class="nav-item"><a class="nav-link nav-link-custom" href="dashboard.html">Dashboard</a></li>
         </ul>
 
-        <div class="d-flex align-items-center gap-2 mt-3 mt-xl-0 flex-wrap flex-xl-nowrap">
-          <button class="rtl-toggle-btn me-2" type="button" aria-label="Toggle RTL mode">RTL</button>
-          <button class="theme-toggle-btn me-2" type="button" aria-label="Toggle theme">
+        <div class="header-actions d-flex align-items-center gap-2 mt-3 mt-xl-0 flex-wrap flex-xl-nowrap">
+          <button class="rtl-toggle-btn" type="button" aria-label="Toggle RTL mode" title="Toggle RTL / LTR direction">
+            <i class="bi bi-arrow-left-right"></i>
+          </button>
+          <button class="theme-toggle-btn" type="button" aria-label="Toggle theme" title="Toggle dark/light mode">
             <i class="bi bi-moon-stars-fill"></i>
           </button>
-          <a href="signup.html" class="btn btn-sm btn-outline-teal btn-custom">Sign Up</a>
+          <a href="contact.html" class="btn btn-sm btn-teal btn-custom ms-1"><i class="bi bi-calendar-check me-1"></i> Book Consultation</a>
         </div>
       </div>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <header class="section-padding bg-secondary-custom border-bottom border-subtle">
-    <div class="container">
+  <!-- EDITORIAL HERO SECTION -->
+  <header class="section-padding bg-secondary-custom border-bottom border-subtle position-relative overflow-hidden">
+    <div class="container position-relative z-1">
       <div class="row align-items-center gy-5">
         <div class="col-lg-6">
-          <span class="section-label section-label-coral mb-3"><i class="bi bi-compass me-1"></i> Editorial Process
-            Edition</span>
+          <span class="section-label section-label-coral mb-3"><i class="bi bi-compass me-1"></i> Editorial Process Edition</span>
           <h1 class="display-3 font-heading mb-4 text-primary-dark">
             Clarity Can Change the Conversation.
           </h1>
           <p class="lead text-muted fs-5 mb-4">
-            A structured roadmap through special education planning. We partner with parents to transform complex
-            documentation into collaborative educational goals.
+            A structured, objective roadmap through special education planning. We partner with parents to transform complex school documentation into collaborative, quantifiable educational goals.
           </p>
-          <div class="d-flex flex-wrap gap-3 hero-action-btns">
-            <a href="contact.html" class="btn btn-teal btn-custom btn-lg w-100 w-sm-auto">Schedule Consultation</a>
-            <a href="dashboard.html" class="btn btn-outline-teal btn-custom btn-lg w-100 w-sm-auto">View Student Dashboard</a>
+          <div class="d-flex flex-wrap gap-3 hero-action-btns mb-4">
+            <a href="contact.html" class="btn btn-teal btn-custom btn-lg w-100 w-sm-auto"><i class="bi bi-calendar-check me-2"></i> Schedule Consultation</a>
+            <a href="#pathways" class="btn btn-outline-teal btn-custom btn-lg w-100 w-sm-auto">Explore Practice Pathways</a>
+          </div>
+
+          <div class="pt-3 border-top border-subtle d-flex flex-wrap align-items-center gap-4 text-muted small fw-semibold">
+            <div class="d-flex align-items-center gap-2"><i class="bi bi-check-circle-fill text-teal"></i> 500+ Families Guided</div>
+            <div class="d-flex align-items-center gap-2"><i class="bi bi-check-circle-fill text-sage"></i> 100% Parent Centered</div>
+            <div class="d-flex align-items-center gap-2"><i class="bi bi-check-circle-fill text-coral"></i> 15+ Yrs Advocacy Experience</div>
           </div>
         </div>
 
         <div class="col-lg-6">
-          <div class="p-4 p-md-5 rounded-4 bg-surface shadow-lg border border-subtle">
-            <div class="d-flex align-items-center justify-content-between mb-4 pb-3 border-bottom border-subtle">
-              <span class="fw-bold text-primary font-heading fs-5"><i class="bi bi-journal-text text-coral me-2"></i>
-                IEP Document Compass</span>
-              <span class="badge bg-coral-soft text-coral rounded-pill px-3 py-1">Interactive Framework</span>
+          <div class="p-3 p-md-4 rounded-4 bg-surface shadow-lg border border-subtle position-relative">
+            <div class="position-relative rounded-3 overflow-hidden shadow-sm mb-4" style="height: 260px;">
+              <img src="assets/img/home2-hero.jpg" alt="Parent and student reviewing educational goals with advocate" class="w-100 h-100 object-fit-cover">
+              <div class="position-absolute bottom-0 start-0 end-0 p-3 bg-dark bg-opacity-75 text-white d-flex align-items-center justify-content-between">
+                <span class="small fw-semibold"><i class="bi bi-journal-check me-1 text-teal"></i> Structured IEP Framework</span>
+                <span class="badge bg-coral text-white">Objective Guidance</span>
+              </div>
             </div>
 
-            <div class="d-flex flex-column gap-3">
-              <div class="p-3 rounded-3 bg-warm border-start border-4 border-teal">
-                <div class="fw-bold text-teal small">STAGE 01 — DOCUMENT AUDIT</div>
-                <div class="fw-bold text-primary">Present Levels of Academic & Functional Performance</div>
-                <div class="small text-muted">Identify exact baseline data and skill measurements.</div>
+            <div class="d-flex flex-column gap-2">
+              <div class="p-3 rounded-3 bg-warm border-start border-4 border-teal d-flex align-items-center justify-content-between">
+                <div>
+                  <div class="fw-bold text-teal small">STAGE 01 — DOCUMENT AUDIT</div>
+                  <div class="fw-semibold text-primary small">Present Levels of Academic Performance (PLAAFP)</div>
+                </div>
+                <i class="bi bi-check-circle-fill text-teal fs-5"></i>
               </div>
 
-              <div class="p-3 rounded-3 bg-warm border-start border-4 border-sage">
-                <div class="fw-bold text-sage small">STAGE 02 — GOAL ALIGNMENT</div>
-                <div class="fw-bold text-primary">Measurable Annual Objectives</div>
-                <div class="small text-muted">Ensure SMART metrics with clear reporting frequency.</div>
+              <div class="p-3 rounded-3 bg-warm border-start border-4 border-sage d-flex align-items-center justify-content-between">
+                <div>
+                  <div class="fw-bold text-sage small">STAGE 02 — GOAL ALIGNMENT</div>
+                  <div class="fw-semibold text-primary small">Measurable Annual Objectives & SMART Targets</div>
+                </div>
+                <i class="bi bi-check-circle-fill text-sage fs-5"></i>
               </div>
 
-              <div class="p-3 rounded-3 bg-warm border-start border-4 border-coral">
-                <div class="fw-bold text-coral small">STAGE 03 — ACCOMMODATION PLAN</div>
-                <div class="fw-bold text-primary">Classroom & Testing Accommodations</div>
-                <div class="small text-muted">Specify tools, extended time, and environment adaptations.</div>
+              <div class="p-3 rounded-3 bg-warm border-start border-4 border-coral d-flex align-items-center justify-content-between">
+                <div>
+                  <div class="fw-bold text-coral small">STAGE 03 — ACCOMMODATION PLAN</div>
+                  <div class="fw-semibold text-primary small">Classroom Adaptations & Testing Tools</div>
+                </div>
+                <i class="bi bi-check-circle-fill text-coral fs-5"></i>
               </div>
             </div>
           </div>
@@ -116,14 +130,13 @@
     </div>
   </header>
 
-  <!-- NEW SECTION 1: CORE ADVOCACY PILLARS -->
+  <!-- CORE SECTION 1: PRACTICE STANDARDS & PILLARS -->
   <section class="section-padding bg-surface border-bottom border-subtle">
     <div class="container">
       <div class="text-center max-w-700 mx-auto mb-5">
         <span class="section-label">Guided Path Practice Standards</span>
         <h2 class="h1 font-heading mb-3">Why Families Choose Our Advocacy</h2>
-        <p class="text-muted fs-5">We ground every consultation in clarity, objective data, and collaborative
-          communication.</p>
+        <p class="text-muted fs-5">We ground every consultation in clarity, objective data, and collaborative communication.</p>
       </div>
 
       <div class="row g-4 justify-content-center">
@@ -131,8 +144,7 @@
           <div class="card-custom p-4 h-100">
             <div class="card-icon mb-3"><i class="bi bi-file-earmark-check"></i></div>
             <h3 class="h5 font-heading text-primary mb-2">Data-Grounded Audits</h3>
-            <p class="text-secondary small mb-0">We review goals against baseline metrics to ensure present levels
-              accurately reflect your child's functional capabilities.</p>
+            <p class="text-secondary small mb-0">We review goals against baseline metrics to ensure present levels accurately reflect your child's functional capabilities and learning trajectory.</p>
           </div>
         </div>
 
@@ -140,8 +152,7 @@
           <div class="card-custom p-4 h-100">
             <div class="card-icon card-icon-coral mb-3"><i class="bi bi-person-heart"></i></div>
             <h3 class="h5 font-heading text-primary mb-2">Empowered Parent Voice</h3>
-            <p class="text-secondary small mb-0">Equipping caregivers with structured Parent Concerns Statements and
-              confidence to lead meeting discussions.</p>
+            <p class="text-secondary small mb-0">Equipping caregivers with structured Parent Concerns Statements and talking points to lead meeting discussions with self-assurance.</p>
           </div>
         </div>
 
@@ -149,16 +160,15 @@
           <div class="card-custom p-4 h-100">
             <div class="card-icon card-icon-sage mb-3"><i class="bi bi-chat-quote"></i></div>
             <h3 class="h5 font-heading text-primary mb-2">Collaborative Dialogue</h3>
-            <p class="text-secondary small mb-0">Fostering respectful, productive relationships with school educators,
-              therapists, and district staff.</p>
+            <p class="text-secondary small mb-0">Fostering respectful, productive relationships with school educators, therapists, and district staff for lasting student outcomes.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- NEW SECTION 2: SERVICE PATHWAYS OVERVIEW -->
-  <section class="section-padding bg-warm border-bottom border-subtle">
+  <!-- CORE SECTION 2: PRACTICE PATHWAYS (CORE SERVICES WITH VISUALS) -->
+  <section class="section-padding bg-warm border-bottom border-subtle" id="pathways">
     <div class="container">
       <div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between mb-5 gap-3">
         <div>
@@ -166,104 +176,242 @@
           <h2 class="h1 font-heading mb-1">Our Core Practice Services</h2>
           <p class="text-muted mb-0">Tailored support packages for every stage of your special education journey.</p>
         </div>
-        <a href="services.html" class="btn btn-teal btn-custom">Explore All Services <i
-            class="bi bi-arrow-right ms-1"></i></a>
+        <a href="services.html" class="btn btn-teal btn-custom">Explore All Services <i class="bi bi-arrow-right ms-1"></i></a>
       </div>
 
       <div class="row g-4 justify-content-center">
+        <!-- Pathway 1 -->
         <div class="col-md-6 col-xl-3">
-          <div class="p-4 rounded-4 bg-surface border border-subtle h-100 d-flex flex-column">
-            <span class="badge bg-accent-soft text-teal w-auto align-self-start mb-3 px-3 py-1">Document Audit</span>
+          <div class="card-custom p-3 h-100 d-flex flex-column">
+            <div class="service-card-visual mb-3" style="height: 180px;">
+              <img src="assets/img/service-iep-review.jpg" alt="IEP Document Audit" loading="lazy">
+              <span class="badge bg-teal text-white service-card-badge">IEP Audit</span>
+            </div>
             <h3 class="h5 font-heading text-primary mb-2">IEP Review & Audit</h3>
-            <p class="small text-muted mb-4">Line-by-line review of present levels, goal measurements, and related
-              service minutes.</p>
-            <a href="services.html#iep-review" class="fw-bold text-teal pathway-card-link small mt-auto">Learn More <i
-                class="bi bi-chevron-right"></i></a>
+            <p class="small text-muted mb-4">Line-by-line review of present levels, goal measurements, and related service minutes.</p>
+            <a href="services.html#iep-review" class="fw-bold text-teal pathway-card-link small mt-auto">Learn More <i class="bi bi-chevron-right"></i></a>
           </div>
         </div>
 
+        <!-- Pathway 2 -->
         <div class="col-md-6 col-xl-3">
-          <div class="p-4 rounded-4 bg-surface border border-subtle h-100 d-flex flex-column">
-            <span class="badge bg-coral-soft text-coral w-auto align-self-start mb-3 px-3 py-1">Meeting Strategy</span>
+          <div class="card-custom p-3 h-100 d-flex flex-column">
+            <div class="service-card-visual mb-3" style="height: 180px;">
+              <img src="assets/img/service-meeting-support.jpg" alt="Pre-Meeting Strategy & Representation" loading="lazy">
+              <span class="badge bg-coral text-white service-card-badge">Meeting Support</span>
+            </div>
             <h3 class="h5 font-heading text-primary mb-2">Pre-Meeting Strategy</h3>
-            <p class="small text-muted mb-4">Agenda formulation, parent concern drafting, and priority talking points
-              prep call.</p>
-            <a href="services.html#meeting-support" class="fw-bold text-coral pathway-card-link small mt-auto">Learn More <i
-                class="bi bi-chevron-right"></i></a>
+            <p class="small text-muted mb-4">Agenda formulation, parent concern drafting, and priority talking points prep call.</p>
+            <a href="services.html#meeting-support" class="fw-bold text-coral pathway-card-link small mt-auto">Learn More <i class="bi bi-chevron-right"></i></a>
           </div>
         </div>
 
+        <!-- Pathway 3 -->
         <div class="col-md-6 col-xl-3">
-          <div class="p-4 rounded-4 bg-surface border border-subtle h-100 d-flex flex-column">
-            <span class="badge bg-sage-soft text-sage w-auto align-self-start mb-3 px-3 py-1">Diagnostic Analysis</span>
+          <div class="card-custom p-3 h-100 d-flex flex-column">
+            <div class="service-card-visual mb-3" style="height: 180px;">
+              <img src="assets/img/service-evaluation.jpg" alt="Evaluation Guidance and FIIE Analysis" loading="lazy">
+              <span class="badge bg-sage text-white service-card-badge">Diagnostic Audit</span>
+            </div>
             <h3 class="h5 font-heading text-primary mb-2">Evaluation Guidance</h3>
-            <p class="small text-muted mb-4">FIIE report interpretation, score analysis, and IEE request guidance.</p>
-            <a href="services.html#evaluation-guidance" class="fw-bold text-sage pathway-card-link small mt-auto">Learn More <i
-                class="bi bi-chevron-right"></i></a>
+            <p class="small text-muted mb-4">FIIE report interpretation, score analysis, and IEE independent evaluation prep.</p>
+            <a href="services.html#evaluation-guidance" class="fw-bold text-sage pathway-card-link small mt-auto">Learn More <i class="bi bi-chevron-right"></i></a>
           </div>
         </div>
 
+        <!-- Pathway 4 -->
         <div class="col-md-6 col-xl-3">
-          <div class="p-4 rounded-4 bg-surface border border-subtle h-100 d-flex flex-column">
-            <span class="badge bg-accent-soft text-teal w-auto align-self-start mb-3 px-3 py-1">504 & Transitions</span>
+          <div class="card-custom p-3 h-100 d-flex flex-column">
+            <div class="service-card-visual mb-3" style="height: 180px;">
+              <img src="assets/img/service-504-plan.jpg" alt="Section 504 Plan Consulting" loading="lazy">
+              <span class="badge bg-teal text-white service-card-badge">504 Plans</span>
+            </div>
             <h3 class="h5 font-heading text-primary mb-2">504 Plan Consulting</h3>
-            <p class="small text-muted mb-4">Accommodations matrix structure for ADHD, medical needs, and secondary
-              transition.</p>
-            <a href="services.html#advocacy-consultation" class="fw-bold text-teal pathway-card-link small mt-auto">Learn More <i
-                class="bi bi-chevron-right"></i></a>
+            <p class="small text-muted mb-4">Accommodations matrix structure for ADHD, medical needs, and secondary transition.</p>
+            <a href="services.html#advocacy-consultation" class="fw-bold text-teal pathway-card-link small mt-auto">Learn More <i class="bi bi-chevron-right"></i></a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- NEW SECTION 3: PARENT TESTIMONIALS & FEEDBACK -->
+  <!-- CORE SECTION 3: THE 4-STAGE COLLABORATIVE FRAMEWORK -->
+  <section class="section-padding bg-surface border-bottom border-subtle">
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-6">
+          <span class="section-label section-label-sage mb-3">Structured Roadmap</span>
+          <h2 class="h1 font-heading mb-4">The 4-Stage Advocacy Framework</h2>
+          <p class="text-muted fs-5 mb-4">
+            We demystify the special education process by taking families through four proven, milestone-driven steps designed to ensure accountability.
+          </p>
+
+          <div class="d-flex flex-column gap-3 mb-4">
+            <div class="d-flex align-items-start gap-3">
+              <span class="badge bg-teal text-white rounded-circle p-2 mt-1" style="width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center;">1</span>
+              <div>
+                <h3 class="h6 font-heading mb-1 text-primary">Baseline Audit & Record Review</h3>
+                <p class="small text-muted mb-0">We inspect all past IEP documents, psychological evaluations, and report cards to extract concrete performance metrics.</p>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-start gap-3">
+              <span class="badge bg-coral text-white rounded-circle p-2 mt-1" style="width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center;">2</span>
+              <div>
+                <h3 class="h6 font-heading mb-1 text-primary">Parent Concerns Statement Formulation</h3>
+                <p class="small text-muted mb-0">Transform family observations into professional, structured agenda points to be placed directly into school meeting notes.</p>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-start gap-3">
+              <span class="badge bg-sage text-white rounded-circle p-2 mt-1" style="width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center;">3</span>
+              <div>
+                <h3 class="h6 font-heading mb-1 text-primary">School Meeting Collaboration & Coaching</h3>
+                <p class="small text-muted mb-0">Pre-meeting rehearsal sessions and strategic support during school conferences to preserve constructive dialogue.</p>
+              </div>
+            </div>
+
+            <div class="d-flex align-items-start gap-3">
+              <span class="badge bg-teal text-white rounded-circle p-2 mt-1" style="width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center;">4</span>
+              <div>
+                <h3 class="h6 font-heading mb-1 text-primary">Post-Meeting Draft Verification</h3>
+                <p class="small text-muted mb-0">Verifying that all accommodations, goals, and therapy minutes agreed upon verbally match the final IEP document before signing.</p>
+              </div>
+            </div>
+          </div>
+
+          <a href="contact.html" class="btn btn-teal btn-custom"><i class="bi bi-calendar-check me-2"></i> Book Framework Intake</a>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="rounded-4 overflow-hidden shadow-lg border border-subtle position-relative">
+            <img src="assets/img/home2-collaboration.jpg" alt="Parents, educators, and advocate working together constructively" class="w-100 h-100 object-fit-cover" style="min-height: 420px;">
+            <div class="position-absolute bottom-0 start-0 end-0 p-4 bg-dark bg-opacity-75 text-white">
+              <span class="badge bg-sage text-white mb-2">Collaboration in Action</span>
+              <h4 class="h5 font-heading text-white mb-1">Constructive, Student-Centered Meetings</h4>
+              <p class="small text-white-50 mb-0">Bridging communication gaps so school staff and parents focus on measurable progress together.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORE SECTION 4: ADVOCACY DIFFERENTIATION & COMPARISON -->
+  <section class="section-padding bg-warm border-bottom border-subtle">
+    <div class="container">
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-5 order-2 order-lg-1">
+          <div class="rounded-4 overflow-hidden shadow-lg border border-subtle">
+            <img src="assets/img/home2-advocate.jpg" alt="Special education advocate providing one on one consulting" class="w-100 h-100 object-fit-cover" style="min-height: 400px;">
+          </div>
+        </div>
+
+        <div class="col-lg-7 order-1 order-lg-2">
+          <span class="section-label section-label-coral mb-3">Advocacy Comparison</span>
+          <h2 class="h1 font-heading mb-4">How Guided Path Transforms Your Meeting Experience</h2>
+          <p class="text-muted fs-5 mb-4">Navigating special education alone often leaves families feeling overwhelmed by educational jargon and rushed meeting tempos.</p>
+
+          <div class="table-responsive">
+            <table class="table table-bordered border-subtle bg-surface rounded-3 overflow-hidden">
+              <thead class="bg-secondary-custom">
+                <tr>
+                  <th class="py-3 text-primary">Aspect</th>
+                  <th class="py-3 text-muted">Without Professional Guidance</th>
+                  <th class="py-3 text-teal">With Guided Path Advocacy</th>
+                </tr>
+              </thead>
+              <tbody class="small">
+                <tr>
+                  <td class="fw-bold">Meeting Prep</td>
+                  <td class="text-muted">Unstructured thoughts, anxiety before ARD</td>
+                  <td class="text-teal fw-semibold"><i class="bi bi-check2 text-teal me-1"></i> Clear agenda & prioritized Parent Statement</td>
+                </tr>
+                <tr>
+                  <td class="fw-bold">Document Goals</td>
+                  <td class="text-muted">Vague objectives without quantifiable metrics</td>
+                  <td class="text-teal fw-semibold"><i class="bi bi-check2 text-teal me-1"></i> SMART goals with verifiable baseline data</td>
+                </tr>
+                <tr>
+                  <td class="fw-bold">Accommodations</td>
+                  <td class="text-muted">Generic classroom modifications</td>
+                  <td class="text-teal fw-semibold"><i class="bi bi-check2 text-teal me-1"></i> Individualized sensory, testing & tool matrix</td>
+                </tr>
+                <tr>
+                  <td class="fw-bold">Follow-Through</td>
+                  <td class="text-muted">Unsure if agreements are implemented</td>
+                  <td class="text-teal fw-semibold"><i class="bi bi-check2 text-teal me-1"></i> Post-meeting audit & progress monitoring</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORE SECTION 5: REAL PARENT TESTIMONIALS & RESULTS -->
   <section class="section-padding bg-surface border-bottom border-subtle">
     <div class="container">
       <div class="text-center max-w-700 mx-auto mb-5">
         <span class="section-label section-label-coral">Parent Experiences</span>
-        <h2 class="h1 font-heading mb-3">Real Stories From Families</h2>
+        <h2 class="h1 font-heading mb-3">Real Stories & Proven Outcomes</h2>
         <p class="text-muted fs-5">Read how structured advocacy brought clarity and calm to ARD reviews.</p>
       </div>
 
       <div class="row g-4">
-        <div class="col-md-6">
-          <div class="p-4 p-md-5 rounded-4 bg-warm border border-subtle h-100">
+        <!-- Testimonial 1 -->
+        <div class="col-md-4">
+          <div class="p-4 rounded-4 bg-warm border border-subtle h-100 d-flex flex-column">
             <div class="d-flex align-items-center gap-1 text-warning mb-3">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
             </div>
-            <p class="fs-5 font-heading text-primary mb-4">
-              "We felt overwhelmed before our son's 5th grade ARD meeting. Guided Path helped us organize our concerns
-              and request quantifiable speech goals that made a change."
+            <p class="font-heading text-primary mb-4 flex-grow-1">
+              "We felt overwhelmed before our son's 5th grade ARD meeting. Guided Path helped us organize our concerns and request quantifiable speech goals that made a noticeable difference."
             </p>
-            <div class="d-flex align-items-center gap-3">
-              <img src="assets/img/david-m.jpg" alt="David M." class="rounded-circle shadow-sm object-fit-cover"
-                style="width: 52px; height: 52px;">
+            <div class="d-flex align-items-center gap-3 pt-3 border-top border-subtle">
+              <img src="assets/img/david-m.jpg" alt="David M." class="rounded-circle shadow-sm object-fit-cover" style="width: 48px; height: 48px;">
               <div>
-                <strong class="text-primary d-block">David M.</strong>
+                <strong class="text-primary d-block small">David M.</strong>
                 <span class="small text-muted">Parent of 5th Grade Student</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div class="col-md-6">
-          <div class="p-4 p-md-5 rounded-4 bg-warm border border-subtle h-100">
+        <!-- Testimonial 2 -->
+        <div class="col-md-4">
+          <div class="p-4 rounded-4 bg-warm border border-subtle h-100 d-flex flex-column">
             <div class="d-flex align-items-center gap-1 text-warning mb-3">
-              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
-                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
             </div>
-            <p class="fs-5 font-heading text-primary mb-4">
-              "The evaluation audit was an eye-opener. Eleanor helped us understand the FIIE percentile ranks and
-              request sensory accommodations we didn't know were available."
+            <p class="font-heading text-primary mb-4 flex-grow-1">
+              "The evaluation audit was an eye-opener. Eleanor helped us understand the FIIE percentile ranks and request sensory accommodations we didn't know were available under IDEA."
             </p>
-            <div class="d-flex align-items-center gap-3">
-              <img src="assets/img/sarah-j.jpg" alt="Sarah J." class="rounded-circle shadow-sm object-fit-cover"
-                style="width: 52px; height: 52px;">
+            <div class="d-flex align-items-center gap-3 pt-3 border-top border-subtle">
+              <img src="assets/img/sarah-j.jpg" alt="Sarah J." class="rounded-circle shadow-sm object-fit-cover" style="width: 48px; height: 48px;">
               <div>
-                <strong class="text-primary d-block">Sarah J.</strong>
+                <strong class="text-primary d-block small">Sarah J.</strong>
                 <span class="small text-muted">Parent of 3rd Grade Student</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 3 -->
+        <div class="col-md-4">
+          <div class="p-4 rounded-4 bg-warm border border-subtle h-100 d-flex flex-column">
+            <div class="d-flex align-items-center gap-1 text-warning mb-3">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="font-heading text-primary mb-4 flex-grow-1">
+              "Transitioning from middle to high school was daunting for our autistic daughter. Guided Path structured her transition plan with clear vocational goals that relieved our fears."
+            </p>
+            <div class="d-flex align-items-center gap-3 pt-3 border-top border-subtle">
+              <img src="assets/img/maria-s.jpg" alt="Maria S." class="rounded-circle shadow-sm object-fit-cover" style="width: 48px; height: 48px;">
+              <div>
+                <strong class="text-primary d-block small">Maria S.</strong>
+                <span class="small text-muted">Parent of 8th Grade Student</span>
               </div>
             </div>
           </div>
@@ -272,21 +420,83 @@
     </div>
   </section>
 
-  <!-- NEW SECTION 4: CONSULTATION READINESS BANNER -->
-  <section class="section-padding bg-warm">
+  <!-- CORE SECTION 6: FREQUENTLY ASKED QUESTIONS ACCORDION -->
+  <section class="section-padding bg-warm border-bottom border-subtle">
+    <div class="container max-w-800">
+      <div class="text-center mb-5">
+        <span class="section-label section-label-sage">Common Questions</span>
+        <h2 class="h1 font-heading mb-3">Special Education Advocacy FAQ</h2>
+        <p class="text-muted fs-5">Straightforward answers about our advocacy consulting services and school meeting process.</p>
+      </div>
+
+      <div class="accordion accordion-flush" id="home2Faq">
+        <div class="accordion-item bg-surface rounded-3 mb-3 border border-subtle overflow-hidden">
+          <h3 class="accordion-header" id="faqHeading1">
+            <button class="accordion-button collapsed fw-bold text-primary font-heading" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="false" aria-controls="faqCollapse1">
+              What documents should I gather for our initial consultation?
+            </button>
+          </h3>
+          <div id="faqCollapse1" class="accordion-collapse collapse" aria-labelledby="faqHeading1" data-bs-parent="#home2Faq">
+            <div class="accordion-body text-muted small">
+              Please gather your child's most recent IEP or Section 504 plan, the latest psychological or multidisciplinary evaluation report (FIIE), recent progress reports, and any relevant email correspondence with teachers or therapists.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item bg-surface rounded-3 mb-3 border border-subtle overflow-hidden">
+          <h3 class="accordion-header" id="faqHeading2">
+            <button class="accordion-button collapsed fw-bold text-primary font-heading" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse2" aria-expanded="false" aria-controls="faqCollapse2">
+              Can an advocate attend our school IEP meeting with us?
+            </button>
+          </h3>
+          <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#home2Faq">
+            <div class="accordion-body text-muted small">
+              Yes. Federal IDEA regulations grant parents the explicit right to include individuals with knowledge or special expertise regarding the child. We can attend virtually or in person, or provide complete pre-meeting strategy coaching so you feel confident leading yourself.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item bg-surface rounded-3 mb-3 border border-subtle overflow-hidden">
+          <h3 class="accordion-header" id="faqHeading3">
+            <button class="accordion-button collapsed fw-bold text-primary font-heading" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse3" aria-expanded="false" aria-controls="faqCollapse3">
+              How does special education advocacy differ from legal representation?
+            </button>
+          </h3>
+          <div id="faqCollapse3" class="accordion-collapse collapse" aria-labelledby="faqHeading3" data-bs-parent="#home2Faq">
+            <div class="accordion-body text-muted small">
+              Advocates focus on educational planning, document audits, collaborative problem-solving, and meeting strategy. We work within the school framework to avoid costly and adversarial due process hearings whenever possible. If formal legal action is required, we can refer you to licensed special education attorneys.
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item bg-surface rounded-3 mb-3 border border-subtle overflow-hidden">
+          <h3 class="accordion-header" id="faqHeading4">
+            <button class="accordion-button collapsed fw-bold text-primary font-heading" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse4" aria-expanded="false" aria-controls="faqCollapse4">
+              When is the ideal time to reach out before an IEP meeting?
+            </button>
+          </h3>
+          <div id="faqCollapse4" class="accordion-collapse collapse" aria-labelledby="faqHeading4" data-bs-parent="#home2Faq">
+            <div class="accordion-body text-muted small">
+              Ideally, we suggest reaching out 3 to 4 weeks prior to your scheduled meeting. This allows ample time for a thorough document audit, request for draft copies from the school, and formulation of your Parent Concerns Statement.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CORE SECTION 7: FINAL CALL TO ACTION BANNER -->
+  <section class="section-padding bg-surface">
     <div class="container">
-      <div class="p-4 p-md-5 rounded-4 bg-surface border border-subtle shadow-lg text-center max-w-900 mx-auto">
-        <span class="badge bg-sage-soft text-sage px-3 py-1 rounded-pill mb-3 fw-bold">Next Steps</span>
+      <div class="p-4 p-md-5 rounded-4 bg-secondary-custom border border-subtle shadow-lg text-center max-w-900 mx-auto">
+        <span class="badge bg-sage text-white px-3 py-1 rounded-pill mb-3 fw-bold">Next Steps</span>
         <h2 class="display-5 font-heading text-primary mb-3">Ready to Transform Your Next IEP Meeting?</h2>
         <p class="lead text-muted fs-5 mb-4 max-w-700 mx-auto">
-          Schedule a confidential 15-minute intro consultation with our lead advocate team to discuss your child's
-          educational needs.
+          Schedule a confidential 15-minute intro consultation with our lead advocate team to discuss your child's educational needs and upcoming school deadlines.
         </p>
         <div class="d-flex flex-wrap justify-content-center gap-3 cta-action-btns">
-          <a href="contact.html" class="btn btn-teal btn-custom btn-lg w-100 w-sm-auto"><i class="bi bi-calendar-check me-2"></i> Book
-            Free Intro Consultation</a>
-          <a href="tel:5553829102" class="btn btn-outline-teal btn-custom btn-lg w-100 w-sm-auto"><i class="bi bi-telephone me-2"></i>
-            Call (555) 382-9102</a>
+          <a href="contact.html" class="btn btn-teal btn-custom btn-lg w-100 w-sm-auto"><i class="bi bi-calendar-check me-2"></i> Book Intro Consultation</a>
+          <a href="tel:5553829102" class="btn btn-outline-teal btn-custom btn-lg w-100 w-sm-auto"><i class="bi bi-telephone me-2"></i> Call (555) 382-9102</a>
         </div>
       </div>
     </div>
