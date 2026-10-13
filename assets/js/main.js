@@ -89,9 +89,9 @@ function initRTLSystem() {
 function updateRTLBtnText(dir) {
   const rtlToggleBtns = document.querySelectorAll('.rtl-toggle-btn');
   rtlToggleBtns.forEach(btn => {
-    btn.innerHTML = '<i class="bi bi-arrow-left-right"></i>';
+    btn.innerHTML = dir === 'rtl' ? '<i class="bi bi-text-left"></i>' : '<i class="bi bi-text-right"></i>';
     btn.setAttribute('aria-label', dir === 'rtl' ? 'Switch to LTR direction' : 'Switch to RTL direction');
-    btn.setAttribute('title', dir === 'rtl' ? 'Switch to LTR mode' : 'Switch to RTL mode');
+    btn.setAttribute('title', dir === 'rtl' ? 'Switch to LTR direction' : 'Switch to RTL direction');
     if (dir === 'rtl') {
       btn.classList.add('active');
     } else {

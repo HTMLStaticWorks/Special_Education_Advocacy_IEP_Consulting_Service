@@ -174,34 +174,55 @@ a:hover {
   background-color: var(--bg-coral-soft) !important;
 }
 
-/* Sub-header / Badge labels */
+/* Sub-header / Badge labels - High Contrast */
 .section-label {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   font-family: var(--font-body);
   font-size: 0.85rem;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--color-primary);
-  background-color: var(--bg-accent-soft);
-  padding: 0.35rem 1rem;
+  color: #0C4B54;
+  background-color: #DCF0F3;
+  padding: 0.38rem 1.05rem;
   border-radius: var(--radius-pill);
   margin-bottom: 1rem;
-  border: 1px solid rgba(42, 123, 136, 0.15);
+  border: 1.5px solid #20727F;
+  box-shadow: 0 1px 3px rgba(12, 75, 84, 0.1);
 }
 
 .section-label-coral {
-  color: var(--color-accent);
-  background-color: var(--bg-coral-soft);
-  border-color: rgba(217, 107, 67, 0.15);
+  color: #8C2C0D;
+  background-color: #FFE5DC;
+  border-color: #CB5227;
+  box-shadow: 0 1px 3px rgba(140, 44, 13, 0.1);
 }
 
 .section-label-sage {
-  color: var(--color-secondary);
-  background-color: var(--bg-sage-soft);
-  border-color: rgba(91, 130, 102, 0.15);
+  color: #124320;
+  background-color: #D6EDD8;
+  border-color: #2E7340;
+  box-shadow: 0 1px 3px rgba(18, 67, 32, 0.1);
+}
+
+[data-theme="dark"] .section-label {
+  color: #6EE7B7;
+  background-color: #064E3B;
+  border-color: #10B981;
+}
+
+[data-theme="dark"] .section-label-coral {
+  color: #FCA5A5;
+  background-color: #451A03;
+  border-color: #F87171;
+}
+
+[data-theme="dark"] .section-label-sage {
+  color: #86EFAC;
+  background-color: #064E3B;
+  border-color: #22C55E;
 }
 
 /* Editorial Heading Underline */
@@ -377,10 +398,25 @@ a:hover {
 
 /* Mobile Hero & Action Buttons Uniform Sizing */
 @media (max-width: 575.98px) {
+  .hero-action-btns {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 0.75rem !important;
+  }
+
   .hero-action-btns .btn,
+  .hero-action-btns a.btn-custom,
   .cta-action-btns .btn {
     width: 100% !important;
-    text-align: center;
+    min-height: 48px;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    padding: 0.75rem 1.25rem !important;
+    font-size: 1rem !important;
+    margin: 0 !important;
   }
 
   .service-card-btns {
@@ -427,6 +463,45 @@ a:hover {
   font-size: 1rem;
 }
 
+/* Header Action Bar & Uniform Buttons */
+.header-actions {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+}
+
+.header-actions .rtl-toggle-btn,
+.header-actions .theme-toggle-btn {
+  width: 40px;
+  height: 40px;
+  min-width: 40px;
+  min-height: 40px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin: 0 !important;
+  flex-shrink: 0;
+}
+
+.header-actions .btn-custom,
+.header-actions a.btn-custom {
+  height: 40px;
+  min-height: 40px;
+  padding: 0 1.1rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  flex-shrink: 0;
+  margin: 0 !important;
+}
+
 /* Theme & RTL Icon Toggle Buttons - Perfectly Consistent Dimensions & Alignment */
 .theme-toggle-btn,
 .rtl-toggle-btn {
@@ -453,6 +528,10 @@ a:hover {
 .rtl-toggle-btn i {
   font-size: 1.15rem;
   color: var(--text-primary);
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   transition: transform var(--transition-fast), color var(--transition-fast);
 }
 
@@ -1685,5 +1764,149 @@ footer a.text-muted:hover {
     display: block;
   }
 }
+
+/* ==========================================================================
+   TAG & BADGE CONTRAST ENHANCEMENTS
+   ========================================================================== */
+.service-card-badge {
+  font-weight: 800 !important;
+  font-size: 0.8rem !important;
+  letter-spacing: 0.04em !important;
+  padding: 0.45rem 0.9rem !important;
+  border-radius: var(--radius-pill) !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35) !important;
+  backdrop-filter: blur(8px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.4) !important;
+}
+
+.badge.bg-teal {
+  background-color: #176470 !important;
+  color: #FFFFFF !important;
+}
+
+.badge.bg-coral {
+  background-color: #B84720 !important;
+  color: #FFFFFF !important;
+}
+
+.badge.bg-sage {
+  background-color: #246436 !important;
+  color: #FFFFFF !important;
+}
+
+/* Category pill badges on service cards */
+.badge.bg-accent-soft.text-teal {
+  background-color: #DCF0F3 !important;
+  color: #0A4E58 !important;
+  border: 1.5px solid #20727F !important;
+  font-weight: 800 !important;
+}
+
+.badge.bg-coral-soft.text-coral {
+  background-color: #FFE5DC !important;
+  color: #8C2C0D !important;
+  border: 1.5px solid #CB5227 !important;
+  font-weight: 800 !important;
+}
+
+.badge.bg-sage-soft.text-sage {
+  background-color: #D6EDD8 !important;
+  color: #124320 !important;
+  border: 1.5px solid #2E7340 !important;
+  font-weight: 800 !important;
+}
+
+[data-theme="dark"] .badge.bg-accent-soft.text-teal {
+  background-color: #164E63 !important;
+  color: #A5F3FC !important;
+  border-color: #22D3EE !important;
+}
+
+[data-theme="dark"] .badge.bg-coral-soft.text-coral {
+  background-color: #431407 !important;
+  color: #FED7AA !important;
+  border-color: #FB923C !important;
+}
+
+[data-theme="dark"] .badge.bg-sage-soft.text-sage {
+  background-color: #064E3B !important;
+  color: #BBF7D0 !important;
+  border-color: #4ADE80 !important;
+}
+
+/* ==========================================================================
+   STRUCTURED JOURNEY - HIGH CONTRAST IN LIGHT MODE
+   ========================================================================== */
+.structured-journey-section .text-muted,
+.structured-journey-card p,
+.structured-journey-card .text-muted {
+  color: #1F2937 !important;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+.structured-journey-section h2,
+.structured-journey-section .h1 {
+  color: #0F172A !important;
+}
+
+.structured-journey-section p.lead,
+.structured-journey-section p.fs-5 {
+  color: #1E293B !important;
+  font-weight: 500;
+}
+
+.structured-journey-card {
+  background-color: #F8F5EE !important;
+  border: 1.5px solid #D5CBBB !important;
+  box-shadow: 0 4px 16px rgba(27, 42, 74, 0.05);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.structured-journey-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(27, 42, 74, 0.1);
+  border-color: var(--color-primary) !important;
+}
+
+.structured-journey-card h3,
+.structured-journey-card .h5 {
+  color: #0F172A !important;
+  font-weight: 700;
+}
+
+.structured-journey-card .badge.rounded-pill {
+  font-weight: 800 !important;
+  font-size: 0.82rem !important;
+  letter-spacing: 0.05em;
+  padding: 0.4rem 0.9rem !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .structured-journey-card {
+  background-color: #1E293B !important;
+  border-color: #334155 !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="dark"] .structured-journey-section .text-muted,
+[data-theme="dark"] .structured-journey-card p,
+[data-theme="dark"] .structured-journey-card .text-muted {
+  color: #CBD5E1 !important;
+}
+
+[data-theme="dark"] .structured-journey-section h2,
+[data-theme="dark"] .structured-journey-section .h1,
+[data-theme="dark"] .structured-journey-card h3,
+[data-theme="dark"] .structured-journey-card .h5 {
+  color: #F8FAFC !important;
+}
+
+[data-theme="dark"] .structured-journey-section p.lead,
+[data-theme="dark"] .structured-journey-section p.fs-5 {
+  color: #E2E8F0 !important;
+}
+
 
 
